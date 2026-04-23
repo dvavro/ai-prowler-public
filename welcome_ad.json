@@ -1,5 +1,5 @@
 {
-  "headline": "Welcome to Free AI-Prowler Home Version 6.0.0",
+  "headline": "Welcome to Free AI-Prowler\u2122 Home Version 6.0.0",
   "body": "Your Personal Agentic AI Knowledge Base for Claude.\n\nAI-Prowler\u2122 Home Version for Windows 11, index and scan your local documents and makes them searchable through Claude \u2014 on desktop, web acess, and mobile acess.\n\n\u2022 Index local and Onedrive documents from any folder on your PC with 65+ file formats supported.\n\u2022 Data Base supports rich meta data and meaning space encoding allowing Agentic AI to query intelligently.\n\u2022 Index 65+ file formats supported including Images or Scanned PDF with Optical Character Recognition for text extraction.\n\u2022 Connect AI-Prowler\u2122 via Claude Desktop (local) or Claude.ai (remote)\n\u2022 Smart Scan skips binaries and system files automatically, Automatic Scheduled scan updates.\n\u2022 AI-Prowler\u2122 Home is free to use on the desktop (remote access requires Claude Pro and Cloudflare accounts).\n\u2022 AI-Prowler\u2122 Business  is avaliable for Multi-Users (Link is TBD).\n\n\nGet started: click the Index Docs tab to add your first folder.",
   "link_text": "Visit AI-Prowler\u2122 on GitHub",
   "link_url": "https://github.com/dvavro/AI-Prowler",
