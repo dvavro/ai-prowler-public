@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "notifications": [
+    {
+      "id": "welcome-6.0",
+      "type": "info",
+      "priority": "normal",
+      "title": "AI-Prowler\u2122 Home v6.0.0 Released",
+      "body": "Thank you for installing AI-Prowler! Visit GitHub for documentation and updates.",
+      "link_text": "View on GitHub",
+      "link_url": "https://github.com/dvavro/AI-Prowler",
+      "show_after": "2026-04-01",
+      "show_until": "2026-12-31",
+      "show_once": true
+    }
+  ],
+  "latest_version": "6.0.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
+  "update_notes": ""
+}
