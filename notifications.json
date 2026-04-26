@@ -35,7 +35,7 @@
       "link_url": "",
       "show_after": "2026-04-01",
       "show_until": "2026-12-31",
-      "show_once": true
+      "show_once": false
     }
   ],
   "latest_version": "6.0.0",
