@@ -16,9 +16,9 @@
     {
       "id": "note_info",
       "type": "upsell",
-      "priority": "high",
+      "priority": "normal / high / low",
       "title": "AI-Prowler Business",
-      "body": "AI-Prowler Business Avaliable allows Desktop and Mobile controlled multiuser AI access to Company Data Base and One Personal PC Data Base.",
+      "body": "Now Avaliable allows Desktop and Mobile configurable multi-user AI Claude Access to company wide Data Base and personal local PC Data Base",
       "link_text": "AI-Prowler Business",
       "link_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
       "show_after": "2026-04-26",
