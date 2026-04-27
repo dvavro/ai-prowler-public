@@ -27,14 +27,14 @@
     },
     {
       "id": "note_info",
-      "type": "info",
-      "priority": "normal",
-      "title": "Testing",
-      "body": "Body testing",
-      "link_text": "",
-      "link_url": "",
-      "show_after": "2026-04-01",
-      "show_until": "2026-12-31",
+      "type": "upsell",
+      "priority": "high",
+      "title": "AI-Prowler Business",
+      "body": "AI-Prowler Business Avaliable allows Desktop and Mobile controlled multiuser AI access to Company Data Base and One Personal PC Data Base.",
+      "link_text": "AI-Prowler Business",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
+      "show_after": "2026-04-26",
+      "show_until": "2026-04-28",
       "show_once": false
     }
   ],
