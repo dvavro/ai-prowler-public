@@ -12,6 +12,18 @@
       "show_after": "2026-04-26",
       "show_until": "2026-04-28",
       "show_once": false
+    },
+    {
+      "id": "Features_of_version_6_0_0",
+      "type": "info",
+      "priority": "normal",
+      "title": "AI-Prowler\u2122 Version 6.0.0",
+      "body": "is avaliable with Self Learning capability tools. Quick Tunnel Support, Auto-Version updates.",
+      "link_text": "AI-Prowler\u2122 Version 6.0.0",
+      "link_url": "URL: https://github.com/dvavro/AI-Prowler/releases/latest",
+      "show_after": "2026-04-29",
+      "show_until": "2026-05-30",
+      "show_once": false
     }
   ],
   "latest_version": "6.0.0",
