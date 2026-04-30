@@ -2,18 +2,6 @@
   "version": "1.0",
   "notifications": [
     {
-      "id": "Initial_version_6_0_0",
-      "type": "release",
-      "priority": "normal",
-      "title": "AI-Prowler\u2122 v6.0.1 Available",
-      "body": "New: Quick Tunnel support and auto-updates",
-      "link_text": "Download Now",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
-      "show_after": "2026-04-01",
-      "show_until": "2026-12-31",
-      "show_once": true
-    },
-    {
       "id": "note_info",
       "type": "upsell",
       "priority": "normal / high / low",
