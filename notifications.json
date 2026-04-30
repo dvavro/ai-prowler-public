@@ -23,7 +23,7 @@
       "link_url": "URL: https://github.com/dvavro/AI-Prowler/releases/latest",
       "show_after": "2026-04-29",
       "show_until": "2026-05-30",
-      "show_once": false
+      "show_once": true
     }
   ],
   "latest_version": "6.0.0",
