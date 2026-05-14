@@ -12,6 +12,18 @@
       "show_after": "2026-05-10",
       "show_until": "2026-05-30",
       "show_once": false
+    },
+    {
+      "id": "release_V6.0.1",
+      "type": "release",
+      "priority": "high",
+      "title": "AI-Prowler\u2122 V6.0.1 release",
+      "body": "Get the latest release AI_Prowler\u2122 V6.0.1",
+      "link_text": "Install now",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
+      "show_after": "2026-05-13",
+      "show_until": "2026-05-30",
+      "show_once": true
     }
   ],
   "latest_version": "V6.0.1",
