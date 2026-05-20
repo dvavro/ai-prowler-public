@@ -15,6 +15,6 @@
     }
   ],
   "latest_version": "6.0.2",
-  "update_url": "URL: https://github.com/dvavro/AI-Prowler/releases/latest",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/download/v6.0.2/AI-Prowler_INSTALL.exe",
   "update_notes": "Added the complete 11-tool surface for Claude-as-code-editor work"
 }
