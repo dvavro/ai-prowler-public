@@ -12,6 +12,18 @@
       "show_after": "2026-05-10",
       "show_until": "2026-05-30",
       "show_once": false
+    },
+    {
+      "id": "Features_of_version_6_0_2",
+      "type": "info",
+      "priority": "high",
+      "title": "AI-Prowler\u2122 Version 6.0.2 Now Avaliable",
+      "body": "This version has 11 new tools to allow file and code edits in place in AI-Prowler Directories. Enables Mobile File edits by Claude.",
+      "link_text": "Install V6.0.2",
+      "link_url": "URL: https://github.com/dvavro/AI-Prowler/releases/latest",
+      "show_after": "2026-05-18",
+      "show_until": "2026-05-30",
+      "show_once": true
     }
   ],
   "latest_version": "6.0.2",
