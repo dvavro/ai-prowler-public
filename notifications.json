@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "notifications": [],
-  "latest_version": "6.0.2",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v6.0.2",
-  "update_notes": "Added the complete 11-tool surface for Claude-as-code-editor work"
+  "latest_version": "7.0.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v7.0.0",
+  "update_notes": "AI-Prowler v7.0.0 — major release with 57 tools, multi-user architecture groundwork, complete tool rename/cleanup, and 581-test suite passing"
 }
