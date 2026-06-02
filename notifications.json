@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "notifications": [],
-  "latest_version": "6.0.2",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v6.0.2",
-  "update_notes": "Added the complete 11-tool surface for Claude-as-code-editor work"
+  "latest_version": "7.0.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v7.0.0",
+  "update_notes": "Added the business mulit-access version and now AI-Prowler has 57 tools including voice email control"
 }
