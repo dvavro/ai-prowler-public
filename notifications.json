@@ -1,19 +1,6 @@
 {
   "version": "1.0",
-  "notifications": [
-    {
-      "id": "Latest version: 7.0.0",
-      "type": "release",
-      "priority": "normal",
-      "title": "AI-Prowler version: 7.0.0",
-      "body": "The AI-Prolwer Latest v7.0.0 is avaliable",
-      "link_text": "Update now",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/latest",
-      "show_after": "2026-06-01",
-      "show_until": "2026-06-29",
-      "show_once": true
-    }
-  ],
+  "notifications": [],
   "latest_version": "6.0.0",
   "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v6.0.0",
   "update_notes": "Added the business mulit-access version and now AI-Prowler has 57 tools including voice email control"
