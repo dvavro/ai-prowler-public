@@ -1,6 +1,19 @@
 {
   "version": "1.0",
-  "notifications": [],
+  "notifications": [
+    {
+      "id": "Latest Version 8.0.0",
+      "type": "info",
+      "priority": "high",
+      "title": "AI-Prowler v8.0.0",
+      "body": "Get the latest AI-Prowler for Claude AI",
+      "link_text": "AI-Prowler Web",
+      "link_url": "https://ai-prowler.com",
+      "show_after": "2026-06-28",
+      "show_until": "2026-07-28",
+      "show_once": true
+    }
+  ],
   "latest_version": "8.0.0",
   "update_url": "https://ai-prowler.com",
   "update_notes": "Latest AI-Prowler has 85 tools and one button subscription/configure/connector setup"
