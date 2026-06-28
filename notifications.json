@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "notifications": [],
-  "latest_version": "6.0.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v6.0.0",
-  "update_notes": "Added the business mulit-access version and now AI-Prowler has 57 tools including voice email control"
+  "latest_version": "8.0.0",
+  "update_url": "https://ai-prowler.com",
+  "update_notes": "Latest AI-Prowler has 85 tools and one button subscription/configure/connector setup"
 }
