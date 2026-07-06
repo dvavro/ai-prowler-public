@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS Notification Sign-Up — AI-Prowler</title>
+<meta name="description" content="Sign up to receive SMS job and appointment notifications from an AI-Prowler LLC customer.">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">AI-Prowler</div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </nav>
+</div>
+
+<div class="wrap">
+  <p class="eyebrow">Messaging</p>
+  <h1>SMS Notification Sign-Up</h1>
+  <p class="updated">How AI-Prowler customers collect messaging consent from their own customers and crew</p>
+
+  <p style="color: var(--text-dim); font-size: 15.5px; max-width: 60ch;">
+    Field service businesses using AI-Prowler send text updates for things like appointment
+    confirmations, technician arrival times, and job-completion notices. Below is the sign-up
+    form recipients use to opt in to those messages.
+  </p>
+
+  <form class="form-panel" onsubmit="handleSubmit(event)">
+    <label for="name">Full name</label>
+    <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+
+    <label for="phone">Mobile phone number</label>
+    <input type="tel" id="phone" name="phone" placeholder="(386) 555-0101" required>
+
+    <div class="consent-row">
+      <input type="checkbox" id="consent" name="consent" required>
+      <label for="consent">
+        I agree to receive SMS text messages about my appointment and service updates.
+        Message frequency varies. Message and data rates may apply. Reply
+        <strong>STOP</strong> to unsubscribe at any time, or <strong>HELP</strong> for help.
+        See the <a href="/privacy.html">Privacy Policy</a> and
+        <a href="/terms.html">Terms & Conditions</a>.
+      </label>
+    </div>
+
+    <button type="submit" class="submit">Sign up for text updates</button>
+    <p class="fine-print">Consent is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.</p>
+  </form>
+</div>
+
+<footer>
+  <a href="/">Home</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms & Conditions</a> · <a href="/sms-consent.html">SMS Sign-Up</a>
+  <br><br>
+  © 2026 AI-Prowler LLC · Florida
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button.submit');
+    btn.textContent = 'Signed up ✓';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
