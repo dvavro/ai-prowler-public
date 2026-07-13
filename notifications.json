@@ -12,9 +12,21 @@
       "show_after": "2026-06-28",
       "show_until": "2026-07-28",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 8.1.0",
+      "type": "info",
+      "priority": "high",
+      "title": "AI-Prowler v8.1.0",
+      "body": "New in v8.1.0: newsletter opt-in, a smarter task queue, and background alerts that save automatically.",
+      "link_text": "AI-Prowler Web",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.0",
+      "show_after": "2026-07-11",
+      "show_until": "2026-08-15",
+      "show_once": true
     }
   ],
-  "latest_version": "8.0.0",
-  "update_url": "https://ai-prowler.com",
-  "update_notes": "Latest AI-Prowler has 81 tools and one button subscription/configure/connector setup"
+  "latest_version": "8.1.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.0",
+  "update_notes": "83 tools now, plus auto-saving Proactive Alerts and a smarter task queue"
 }
