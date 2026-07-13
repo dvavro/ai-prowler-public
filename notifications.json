@@ -2,18 +2,6 @@
   "version": "1.0",
   "notifications": [
     {
-      "id": "Latest Version 8.0.0",
-      "type": "info",
-      "priority": "high",
-      "title": "AI-Prowler v8.0.0",
-      "body": "Get the latest AI-Prowler for Claude AI",
-      "link_text": "AI-Prowler Web",
-      "link_url": "https://ai-prowler.com",
-      "show_after": "2026-06-28",
-      "show_until": "2026-07-28",
-      "show_once": true
-    },
-    {
       "id": "Latest Version 8.1.0",
       "type": "info",
       "priority": "high",
