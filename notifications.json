@@ -14,7 +14,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "8.1.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.0",
-  "update_notes": "83 tools now, plus auto-saving Proactive Alerts and a smarter task queue"
+  "latest_version": "8.1.1",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.1",
+  "update_notes": "Newsletter subscribe method updated"
 }
