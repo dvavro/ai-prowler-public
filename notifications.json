@@ -12,6 +12,18 @@
       "show_after": "2026-07-11",
       "show_until": "2026-08-15",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 8.1.3",
+      "type": "release",
+      "priority": "high",
+      "title": "v8.1.3",
+      "body": "Proactive alert fixes, removed Fuzzy replace in file",
+      "link_text": "AI-Prowler v8.1.3",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.3",
+      "show_after": "YYYY-MM-DD",
+      "show_until": "YYYY-MM-DD",
+      "show_once": true
     }
   ],
   "latest_version": "8.1.3",
