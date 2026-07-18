@@ -16,5 +16,5 @@
   ],
   "latest_version": "8.1.4",
   "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.4",
-  "update_notes": "Business Server now runs on one unified knowledge base instead of a separate database per scope. Every role can index; access is controlled entirely by scope,"
+  "update_notes": "Business Server now runs on one unified knowledge base. Every role can index; access is controlled entirely by scope,"
 }
