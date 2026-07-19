@@ -14,7 +14,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "8.1.5",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.5",
-  "update_notes": "fixes to task run due, install, server access change"
+  "latest_version": "8.1.6",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.6",
+  "update_notes": "Fixes to server display of scope in update index tab"
 }
