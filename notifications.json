@@ -12,6 +12,18 @@
       "show_after": "2026-07-18",
       "show_until": "2026-08-18",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 8.1.6",
+      "type": "release",
+      "priority": "high",
+      "title": "v8.1.6",
+      "body": "Fixes to server display of scope in update index tab",
+      "link_text": "AI-Prowler v8.1.6",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.6",
+      "show_after": "2026-07-18",
+      "show_until": "2026-08-18",
+      "show_once": true
     }
   ],
   "latest_version": "8.1.6",
