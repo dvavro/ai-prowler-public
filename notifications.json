@@ -7,7 +7,7 @@
       "priority": "high",
       "title": "v8.1.12",
       "body": "Task queue fixes and fix version pinning",
-      "link_text": "AI-Prowler v8.1.9",
+      "link_text": "AI-Prowler v8.1.12",
       "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.12",
       "show_after": "2026-07-27",
       "show_until": "2026-08-27",
