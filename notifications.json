@@ -12,6 +12,18 @@
       "show_after": "2026-07-27",
       "show_until": "2026-08-27",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.0.0",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.0.0",
+      "body": "Task queue fixes and fix version pinning",
+      "link_text": "AI-Prowler v9.0.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
+      "show_after": "2026-08-06",
+      "show_until": "2026-09-06",
+      "show_once": true
     }
   ],
   "latest_version": "9.0.0",
