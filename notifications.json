@@ -2,19 +2,19 @@
   "version": "1.0",
   "notifications": [
     {
-      "id": "Latest Version 8.1.8",
+      "id": "Latest Version 9.0.0",
       "type": "release",
       "priority": "high",
-      "title": "v8.1.8",
-      "body": "Task queue can now run automatically on a schedule",
-      "link_text": "AI-Prowler v8.1.8",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.8",
-      "show_after": "2026-07-20",
-      "show_until": "2026-08-20",
+      "title": "v9.0.0",
+      "body": "Task queue fixes and fix version pinning",
+      "link_text": "AI-Prowler v9.0.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
+      "show_after": "2026-08-06",
+      "show_until": "2026-09-06",
       "show_once": true
     }
   ],
-  "latest_version": "8.1.8",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v8.1.8",
-  "update_notes": "Task queue can now run automatically on a schedule"
+  "latest_version": "9.0.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
+  "update_notes": "Task queue changes and fixes"
 }
