@@ -36,20 +36,27 @@
     <label for="phone">Mobile phone number</label>
     <input type="tel" id="phone" name="phone" placeholder="(386) 555-0101" required>
 
-    <div class="consent-row">
-      <input type="checkbox" id="consent" name="consent" required>
-      <label for="consent">
-        I agree to receive SMS text messages from <strong>AI-Prowler LLC</strong>, including job
-        scheduling confirmations, crew ETA notifications, and job completion updates.
-        Message frequency varies. Message and data rates may apply. Reply
-        <strong>STOP</strong> to unsubscribe at any time, or <strong>HELP</strong> for help.
-        See the <a href="/privacy.html">Privacy Policy</a> and
-        <a href="/terms.html">Terms & Conditions</a>.
-      </label>
-    </div>
+      <div class="consent-row">
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">
+          <span style="display:inline-block;background:#e8f4e8;color:#2a6e2a;font-size:12px;font-weight:bold;padding:1px 7px;border-radius:10px;margin-right:6px;vertical-align:middle;">OPTIONAL</span>
+          I agree to receive SMS text messages from <strong>AI-Prowler LLC</strong>, including job
+          scheduling confirmations, crew ETA notifications, and job completion updates.
+          Message frequency varies. Msg &amp; data rates may apply. Reply
+          <strong>STOP</strong> to unsubscribe at any time, or <strong>HELP</strong> for help.
+          See the <a href="/privacy.html">Privacy Policy</a> and
+          <a href="/terms.html">Terms &amp; Conditions</a>.
+        </label>
+      </div>
 
-    <button type="submit" class="submit">Sign up for text updates</button>
-    <p class="fine-print">Consent is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.</p>
+      <p class="fine-print" style="margin-top:10px; margin-bottom:8px; color:#555; font-size:13px; border-left:3px solid #2a6e2a; padding-left:10px;">
+        ✅ <strong>SMS consent is completely optional.</strong> You can submit this form and receive
+        AI-Prowler's services without checking the box above. Consent to receive SMS messages is
+        not required as a condition of purchase or service.
+      </p>
+
+      <button type="submit" class="submit">Submit</button>
+      <p class="fine-print">Carriers are not liable for delayed or undelivered messages.</p>
   </form>
 </div>
 
