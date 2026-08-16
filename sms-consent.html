@@ -29,12 +29,16 @@
     information below to opt in.
   </p>
 
-  <form class="form-panel" onsubmit="handleSubmit(event)">
+  <form class="form-panel" data-ai-prowler-consent-form>
     <label for="name">Full name</label>
     <input type="text" id="name" name="name" placeholder="Jane Smith" required>
 
     <label for="phone">Mobile phone number</label>
     <input type="tel" id="phone" name="phone" placeholder="(386) 555-0101" required>
+
+    <div style="position:absolute; left:-9999px" aria-hidden="true">
+      <input type="text" name="website" tabindex="-1" autocomplete="off">
+    </div>
 
       <div class="consent-row">
         <input type="checkbox" id="consent" name="consent">
@@ -66,14 +70,8 @@
   © 2026 AI-Prowler LLC · Florida
 </footer>
 
-<script>
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button.submit');
-    btn.textContent = 'Signed up ✓';
-    btn.disabled = true;
-  }
-</script>
+<script src="https://ai-prowler.com/consent-widget.js"
+        data-endpoint="https://ap-david-vavro1-2836dfdf.ai-prowler.com/consent-signup"></script>
 
 </body>
 </html>
