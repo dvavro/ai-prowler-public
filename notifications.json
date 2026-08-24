@@ -14,7 +14,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "9.0.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
-  "update_notes": "Task queue changes and fixes"
+  "latest_version": "9.1.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.1.0",
+  "update_notes": "Remote control and Jobs Mobile Apps added for Cell Phones."
 }
