@@ -2,19 +2,19 @@
   "version": "1.0",
   "notifications": [
     {
-      "id": "Latest Version 9.0.0",
+      "id": "Latest Version 9.1.0",
       "type": "release",
       "priority": "high",
-      "title": "v9.0.0",
-      "body": "Task queue fixes and fix version pinning",
-      "link_text": "AI-Prowler v9.0.0",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
-      "show_after": "2026-08-06",
-      "show_until": "2026-09-06",
+      "title": "v9.1.0",
+      "body": "Remote control and Jobs Mobile Apps added for Cell Phones.",
+      "link_text": "AI-Prowler v9.1.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.1.0",
+      "show_after": "2026-08-23",
+      "show_until": "2026-09-23",
       "show_once": true
     }
   ],
-  "latest_version": "9.0.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.0.0",
-  "update_notes": "Task queue changes and fixes"
+  "latest_version": "9.1.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.1.0",
+  "update_notes": "Remote control and Jobs Mobile Apps added for Cell Phones."
 }
