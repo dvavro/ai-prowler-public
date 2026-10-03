@@ -12,6 +12,18 @@
       "show_after": "2026-08-23",
       "show_until": "2026-09-23",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.2.0",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.2.0",
+      "body": "New Jobs App with SQLite DataBase and expanded features and extensive End to End validation",
+      "link_text": "AI-Prowler v9.2.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.2.0",
+      "show_after": "2026-10-02",
+      "show_until": "2026-11-02",
+      "show_once": true
     }
   ],
   "latest_version": "9.2.0",
