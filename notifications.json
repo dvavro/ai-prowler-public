@@ -14,7 +14,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "9.1.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.1.0",
-  "update_notes": "Remote control and Jobs Mobile Apps added for Cell Phones."
+  "latest_version": "9.2.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.2.0",
+  "update_notes": "New Jobs App with SQLite DataBase and expanded features and extensive End to End validation"
 }
