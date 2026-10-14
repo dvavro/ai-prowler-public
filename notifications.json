@@ -2,18 +2,6 @@
   "version": "1.0",
   "notifications": [
     {
-      "id": "Latest Version 9.2.0",
-      "type": "release",
-      "priority": "high",
-      "title": "v9.3.0",
-      "body": "New HR Admin phone App, New HR Employee Portal Phone App, Improved Contractor Jobs Phone App.",
-      "link_text": "AI-Prowler v9.3.0",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.3.0",
-      "show_after": "2026-10-13",
-      "show_until": "2026-11-14",
-      "show_once": true
-    },
-    {
       "id": "Latest Version 9.3.0",
       "type": "release",
       "priority": "high",
