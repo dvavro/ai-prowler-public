@@ -5,12 +5,12 @@
       "id": "Latest Version 9.2.0",
       "type": "release",
       "priority": "high",
-      "title": "v9.2.0",
-      "body": "New Jobs App with SQLite DataBase and expanded features and extensive End to End validation",
-      "link_text": "AI-Prowler v9.2.0",
-      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.2.0",
-      "show_after": "2026-10-02",
-      "show_until": "2026-11-02",
+      "title": "v9.3.0",
+      "body": "New HR Admin phone App, New HR Employee Portal Phone App, Improved Contractor Jobs Phone App.",
+      "link_text": "AI-Prowler v9.3.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.3.0",
+      "show_after": "2026-10-13",
+      "show_until": "2026-11-14",
       "show_once": true
     }
   ],
