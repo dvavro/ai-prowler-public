@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Admin App — AI-Prowler HR Mobile App for Owners &amp; Managers</title>
+<meta name="description" content="The AI-Prowler HR Admin App gives small business owners and managers hiring, onboarding, time and attendance, payroll records, compliance and offboarding on their phone — running on their own AI-Prowler server.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--navy: #0D1117; --navy-card: #161B22; --navy-border: #21262D;
+--blue: #2E75B6; --blue-bright: #4DA6FF;
+--green: #22C55E; --orange: #F97316; --red: #F87171;
+--acc: #A855F7; --acc-dim: rgba(168,85,247,0.12); --acc-border: rgba(168,85,247,0.35); --acc-hover: #C084FC;
+--white: #F0F6FC; --grey: #8B949E; --grey-light: #C9D1D9;
+--mono: 'Courier New', Courier, monospace;
+--sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--navy); color: var(--white); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--navy-border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 1rem; }
+.nav-logo { font-family: var(--mono); font-size: 1.1rem; font-weight: bold; color: var(--blue-bright); letter-spacing: 0.05em; text-decoration: none; }
+.nav-back { color: var(--grey-light); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav-back:hover { color: var(--white); }
+.nav-cta { background: var(--acc); color: var(--navy); padding: 0.4rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.nav-cta:hover { background: var(--acc-hover); }
+.hero { padding: 80px 5% 60px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 600px; max-width: 100%; height: 600px; background: radial-gradient(circle, var(--acc-dim) 0%, transparent 70%); pointer-events: none; }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--acc); border: 1px solid var(--acc-border); padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.6rem; }
+.hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; max-width: 760px; margin: 0 auto 1.2rem; }
+.hero h1 em { font-style: normal; color: var(--acc); }
+.hero-sub { font-size: 1.1rem; color: var(--grey-light); max-width: 560px; margin: 0 auto 2rem; line-height: 1.7; }
+.hero-note { font-size: 0.82rem; color: var(--grey); margin-top: 0.9rem; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--acc); color: var(--navy); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--acc-hover); transform: translateY(-1px); }
+.btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--navy-border); color: var(--grey-light); padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-outline:hover { border-color: var(--acc); color: var(--white); }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.phone-showcase { padding: 20px 5% 80px; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+.phone-wrap { flex-shrink: 0; }
+.phone-label { text-align: center; font-size: 0.78rem; color: var(--grey); font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+.phone { width: 260px; background: #0a0f14; border: 2px solid #2a3040; border-radius: 36px; padding: 12px; box-shadow: 0 0 60px var(--acc-dim), 0 20px 60px rgba(0,0,0,0.6); }
+.phone-notch { width: 80px; height: 22px; background: #0a0f14; border-radius: 0 0 14px 14px; margin: 0 auto 10px; border: 2px solid #2a3040; border-top: none; }
+.phone-screen { background: #0d1117; border-radius: 24px; overflow: hidden; min-height: 480px; }
+.s-nav { border-bottom: 1px solid #21262d; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; }
+.s-nav-title { font-size: 0.72rem; font-weight: 700; color: #f0f6fc; }
+.s-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 6px var(--acc); }
+.s-section { padding: 8px 12px 4px; font-size: 0.55rem; font-weight: 700; color: var(--grey); text-transform: uppercase; letter-spacing: 0.1em; }
+.row { margin: 0 10px 6px; background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 8px 10px; display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.row.hi { border-color: var(--acc-border); background: var(--acc-dim); }
+.r-name { font-size: 0.6rem; font-weight: 700; color: #f0f6fc; }
+.r-sub { font-size: 0.5rem; color: var(--grey); }
+.r-big { font-size: 0.72rem; font-weight: 800; font-family: var(--mono); color: var(--acc); }
+.tag { font-size: 0.48rem; padding: 2px 5px; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+.t-acc { background: var(--acc-dim); border: 1px solid var(--acc-border); color: var(--acc); }
+.t-gn { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: var(--green); }
+.t-or { background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.4); color: var(--orange); }
+.t-gr { background: #21262d; color: var(--grey); }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px 10px 8px; }
+.tile { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 8px; }
+.tile-n { font-size: 0.95rem; font-weight: 800; font-family: var(--mono); color: var(--acc); line-height: 1.1; }
+.tile-l { font-size: 0.48rem; color: var(--grey); text-transform: uppercase; letter-spacing: 0.06em; }
+.xbtn { font-size: 0.55rem; padding: 6px 0; border-radius: 6px; border: none; font-weight: 700; font-family: var(--sans); width: 100%; }
+.b-acc { background: var(--acc); color: #0d1117; }
+.b-ghost { background: transparent; border: 1px solid var(--acc-border); color: var(--acc); }
+.bar { height: 5px; background: #21262d; border-radius: 3px; overflow: hidden; margin-top: 4px; }
+.bar > i { display: block; height: 100%; background: var(--acc); }
+.features-section { padding: 60px 5% 80px; }
+.features-inner { max-width: 1000px; margin: 0 auto; }
+.section-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--acc); margin-bottom: 0.8rem; }
+.section-title { font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.section-sub { font-size: 1.05rem; color: var(--grey-light); max-width: 560px; line-height: 1.7; margin-bottom: 3rem; }
+.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+.feat-card { background: var(--navy-card); border: 1px solid var(--navy-border); border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.feat-card:hover { border-color: var(--acc); box-shadow: 0 0 20px var(--acc-dim); }
+.feat-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+.feat-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.feat-desc { font-size: 0.88rem; color: var(--grey-light); line-height: 1.6; }
+.workflow-section { background: var(--navy-card); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 60px 5%; }
+.workflow-inner { max-width: 900px; margin: 0 auto; }
+.workflow-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.ws { text-align: center; padding: 1.4rem 1rem; background: var(--navy); border: 1px solid var(--navy-border); border-radius: 12px; }
+.wn { width: 36px; height: 36px; border-radius: 50%; background: var(--acc-dim); border: 1px solid var(--acc-border); color: var(--acc); font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; }
+.ws h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.3rem; }
+.ws p { font-size: 0.8rem; color: var(--grey-light); line-height: 1.5; }
+.cta-section { padding: 80px 5%; text-align: center; }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-inner h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 1rem; }
+.cta-inner p { color: var(--grey-light); margin-bottom: 2rem; line-height: 1.7; }
+footer { border-top: 1px solid var(--navy-border); padding: 2rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-brand { font-family: var(--mono); font-size: 0.9rem; color: var(--blue-bright); }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+.footer-links a { color: var(--grey); font-size: 0.85rem; text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+@media (max-width: 640px) {
+  nav { padding: 0 4%; }
+  .nav-back { display: none; }
+  .hero { padding: 50px 4% 40px; }
+  .phone-showcase { gap: 1.2rem; }
+  .phone { width: 240px; }
+  .feat-grid, .workflow-steps { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">AI-Prowler</a>
+  <a href="index.html" class="nav-back">← Back to main site</a>
+  <a href="index.html#pricing" class="nav-cta">Get Business</a>
+</nav>
+
+<section class="hero">
+  <span class="eyebrow">💼 HR Admin Mobile App — No App Store Required</span>
+  <h1>Your HR department.<br><em>In your pocket.</em></h1>
+  <p class="hero-sub">
+    The AI-Prowler HR Admin App gives owners and managers a complete HR back office on their phone &mdash;
+    hiring, onboarding, time and attendance, payroll records, compliance, and offboarding, all running on your own AI-Prowler server.
+  </p>
+  <div class="hero-actions">
+    <a href="index.html#pricing" class="btn-primary">Get AI-Prowler Business &rarr;</a>
+    <a href="hr-portal-pwa.html" class="btn-outline">See HR Employee Portal →</a>
+  </div>
+  <p class="hero-note">Included with AI-Prowler Business (server mode) &mdash; no app store, no install. Your employee records stay on your server.</p>
+</section>
+
+<div class="phone-showcase">
+
+  <!-- Dashboard -->
+  <div class="phone-wrap">
+    <div class="phone-label">Team at a Glance</div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="s-nav"><div class="s-nav-title">💼 HR Admin</div><div class="s-dot"></div></div>
+        <div class="tiles">
+          <div class="tile"><div class="tile-n">12</div><div class="tile-l">Employees</div></div>
+          <div class="tile"><div class="tile-n">2</div><div class="tile-l">Onboarding</div></div>
+          <div class="tile"><div class="tile-n">3</div><div class="tile-l">PTO requests</div></div>
+          <div class="tile"><div class="tile-n">5</div><div class="tile-l">Tasks due</div></div>
+        </div>
+        <div class="s-section">Needs your attention</div>
+        <div class="row hi"><div><div class="r-name">PTO — Jordan Reyes</div><div class="r-sub">Oct 20 – Oct 22 · 3 days</div></div><span class="tag t-acc">Approve</span></div>
+        <div class="row"><div><div class="r-name">I-9 due — Sam Patel</div><div class="r-sub">Start date Oct 16</div></div><span class="tag t-or">Due in 2d</span></div>
+        <div class="row"><div><div class="r-name">Forklift cert expiring</div><div class="r-sub">Chris Owens · Nov 1</div></div><span class="tag t-or">Renew</span></div>
+        <div class="row"><div><div class="r-name">Incident report filed</div><div class="r-sub">Warehouse · today 9:14 AM</div></div><span class="tag t-gr">Review</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onboarding -->
+  <div class="phone-wrap">
+    <div class="phone-label">Onboarding Checklist</div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="s-nav"><div class="s-nav-title">📋 Sam Patel</div><div style="font-size:0.5rem;color:var(--acc);">● Onboarding</div></div>
+        <div style="padding:8px 12px 6px;">
+          <div style="font-size:0.55rem;color:var(--grey);">Field Technician · Starts Oct 16</div>
+          <div class="bar"><i style="width:62%"></i></div>
+          <div style="font-size:0.48rem;color:var(--grey);margin-top:3px;">5 of 8 steps complete</div>
+        </div>
+        <div class="s-section">Steps</div>
+        <div class="row"><div class="r-name">✓ Offer letter signed</div><span class="tag t-gn">Done</span></div>
+        <div class="row"><div class="r-name">✓ W-4 received</div><span class="tag t-gn">Done</span></div>
+        <div class="row"><div class="r-name">✓ Direct deposit set up</div><span class="tag t-gn">Done</span></div>
+        <div class="row"><div class="r-name">✓ Handbook acknowledged</div><span class="tag t-gn">Done</span></div>
+        <div class="row"><div class="r-name">✓ Portal account created</div><span class="tag t-gn">Done</span></div>
+        <div class="row hi"><div class="r-name">I-9 verification</div><span class="tag t-or">Due</span></div>
+        <div class="row"><div class="r-name">Safety orientation</div><span class="tag t-gr">Pending</span></div>
+        <div class="row"><div class="r-name">Equipment issued</div><span class="tag t-gr">Pending</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time & Attendance -->
+  <div class="phone-wrap">
+    <div class="phone-label">Clock-In Log</div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="s-nav"><div class="s-nav-title">📍 Clock In/Out Log</div><div class="s-dot"></div></div>
+        <div style="padding:8px 12px 4px;display:flex;justify-content:space-between;">
+          <div style="font-size:0.65rem;font-weight:700;color:#f0f6fc;">Today</div>
+          <div style="font-size:0.55rem;color:var(--acc);">9 on the clock</div>
+        </div>
+        <div class="row"><div><div class="r-name">Jordan Reyes</div><div class="r-sub">In 7:02 AM · Main St site</div></div><div class="r-big">4h 31m</div></div>
+        <div class="row"><div><div class="r-name">Chris Owens</div><div class="r-sub">In 7:15 AM · Warehouse</div></div><div class="r-big">4h 18m</div></div>
+        <div class="row"><div><div class="r-name">Taylor Kim</div><div class="r-sub">In 8:00 AM · Office</div></div><div class="r-big">3h 33m</div></div>
+        <div class="row"><div><div class="r-name">Alex Moreno</div><div class="r-sub">7:00 – 11:30 AM · Lunch</div></div><div class="r-big" style="color:var(--grey);">4h 30m</div></div>
+        <div class="s-section">This pay period</div>
+        <div class="tiles">
+          <div class="tile"><div class="tile-n">412h</div><div class="tile-l">Regular</div></div>
+          <div class="tile"><div class="tile-n">18h</div><div class="tile-l">Overtime</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<section class="features-section">
+  <div class="features-inner">
+    <p class="section-label">HR Admin App</p>
+    <h2 class="section-title">Hire to retire, in one app.</h2>
+    <p class="section-sub">Everything a small business owner or manager needs to run HR &mdash; without a separate HR system or a monthly per-employee fee on top.</p>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-icon">👥</div><div class="feat-title">Employee Records</div><div class="feat-desc">One place for every employee &mdash; personal details, job title, pay, location, documents, and a printable employee file.</div></div>
+      <div class="feat-card"><div class="feat-icon">🧲</div><div class="feat-title">Recruiting &amp; Offers</div><div class="feat-desc">Track candidates through hiring and generate offer letters with your company name and terms filled in.</div></div>
+      <div class="feat-card"><div class="feat-icon">📋</div><div class="feat-title">Guided Onboarding</div><div class="feat-desc">Step-by-step onboarding for each new hire, with I-9 and W-4 tracking so nothing is missed before day one.</div></div>
+      <div class="feat-card"><div class="feat-icon">⏱</div><div class="feat-title">Time &amp; Attendance</div><div class="feat-desc">See who is on the clock right now, review the clock-in/out log with work locations, and track attendance.</div></div>
+      <div class="feat-card"><div class="feat-icon">🏖</div><div class="feat-title">Time Off</div><div class="feat-desc">Employees request PTO from the portal; you approve or decline from your phone and balances update automatically.</div></div>
+      <div class="feat-card"><div class="feat-icon">💵</div><div class="feat-title">Payroll &amp; Benefits</div><div class="feat-desc">Keep payroll records and benefits enrollment for each employee in one place, ready for your payroll provider.</div></div>
+      <div class="feat-card"><div class="feat-icon">⭐</div><div class="feat-title">Performance &amp; Training</div><div class="feat-desc">Run performance reviews and keep a training portfolio for each employee, including certifications and expirations.</div></div>
+      <div class="feat-card"><div class="feat-icon">⚖</div><div class="feat-title">State-Aware Compliance</div><div class="feat-desc">Built-in federal and state HR rules flag the deadlines and notices that apply where your people work.</div></div>
+      <div class="feat-card"><div class="feat-icon">🚨</div><div class="feat-title">Incident Reports</div><div class="feat-desc">Employees file incident reports from the portal; you review, follow up, and keep a record.</div></div>
+      <div class="feat-card"><div class="feat-icon">🗓</div><div class="feat-title">Schedules &amp; Tasks</div><div class="feat-desc">Build team schedules and assign HR tasks with due dates, so the next step is always clear.</div></div>
+      <div class="feat-card"><div class="feat-icon">🚪</div><div class="feat-title">Offboarding</div><div class="feat-desc">Termination starts a full offboarding flow &mdash; final pay receipt, separation and COBRA notices &mdash; and ends portal access.</div></div>
+      <div class="feat-card"><div class="feat-icon">💬</div><div class="feat-title">Messages &amp; Reports</div><div class="feat-desc">Message employees directly and pull HR reports on headcount, hours, time off, and more.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="workflow-section">
+  <div class="workflow-inner">
+    <p class="section-label">New Hire Workflow</p>
+    <h2 class="section-title">From offer to first day.</h2>
+    <div class="workflow-steps">
+      <div class="ws"><div class="wn">1</div><h4>Add Candidate</h4><p>Enter the candidate and track them through recruiting.</p></div>
+      <div class="ws"><div class="wn">2</div><h4>Send Offer</h4><p>Generate the offer letter with your terms filled in.</p></div>
+      <div class="ws"><div class="wn">3</div><h4>Onboard</h4><p>Work the checklist &mdash; I-9, W-4, direct deposit, handbook.</p></div>
+      <div class="ws"><div class="wn">4</div><h4>Portal Access</h4><p>The new hire signs in to the HR Employee Portal with their AI-Prowler account.</p></div>
+      <div class="ws"><div class="wn">5</div><h4>Train</h4><p>Assign orientation and safety training; completion lands in their portfolio.</p></div>
+      <div class="ws"><div class="wn">6</div><h4>Track Time</h4><p>They clock in from the portal; you see hours and attendance in HR Admin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Give your business a real HR department.</h2>
+    <p>The HR Admin App is included with AI-Prowler Business and runs on your own AI-Prowler server. Turn it on in the server&rsquo;s Settings &rarr; MCP Tool Configuration, then scan the QR code on the Settings tab to add it to your phone.</p>
+    <div class="hero-actions">
+      <a href="index.html#pricing" class="btn-primary">Get AI-Prowler Business — $20/seat &rarr;</a>
+      <a href="hr-portal-pwa.html" class="btn-outline">See HR Employee Portal →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand">AI-Prowler</span>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="remote-pwa.html">Remote Control App</a></li>
+    <li><a href="jobs-pwa.html">Contractor Jobs App</a></li>
+    <li><a href="hr-admin-pwa.html">HR Admin App</a></li>
+    <li><a href="hr-portal-pwa.html">HR Employee Portal</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+    <li><a href="mailto:david.vavro1@gmail.com">Support</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
