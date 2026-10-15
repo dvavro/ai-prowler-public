@@ -72,6 +72,11 @@ font-weight: 600;
 transition: background 0.2s !important;
 }
 .nav-cta:hover { background: var(--blue-bright) !important; color: var(--navy) !important; }
+.nav-mobile { display: none; align-items: center; gap: 0.6rem; }
+.nav-mobile .nav-cta { font-size: 0.85rem; padding: 0.4rem 0.8rem; text-decoration: none; }
+.nav-toggle { appearance: none; background: transparent; border: 1px solid var(--navy-border); color: var(--white);
+  border-radius: 6px; width: 38px; height: 34px; font-size: 1.15rem; line-height: 1; cursor: pointer; }
+.nav-toggle:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 2px; }
 .video-cta-wrap {
 text-align: center;
 padding-top: 40px;
@@ -700,6 +705,11 @@ letter-spacing: -0.01em;
 .apps-table thead th span, .apps-note { font-size: 0.66rem; }
 nav { padding: 0 4%; }
 .nav-links { display: none; }
+.nav-mobile { display: flex; }
+nav.open .nav-links { display: flex; flex-direction: column; gap: 0; position: absolute; top: 60px; left: 0; right: 0;
+  background: var(--navy); border-bottom: 1px solid var(--navy-border); padding: 0.4rem 4% 0.8rem; box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+nav.open .nav-links li a { display: block; padding: 0.7rem 0; font-size: 1rem; }
+nav.open .nav-links li:last-child { display: none; }
 section { padding: 60px 4%; }
 .hero { padding: 30px 4% 60px; }
 footer { flex-direction: column; text-align: center; }
@@ -722,7 +732,21 @@ footer { flex-direction: column; text-align: center; }
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#pricing" class="nav-cta">Download Free</a></li>
 </ul>
+<div class="nav-mobile">
+<a href="#pricing" class="nav-cta">Download Free</a>
+<button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+</div>
 </nav>
+<script>
+(function () {
+  var nav = document.querySelector('nav'), btn = nav && nav.querySelector('.nav-toggle');
+  if (!btn) return;
+  function set(open) { nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); btn.innerHTML = open ? '&#10005;' : '&#9776;'; }
+  btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+})();
+</script>
 
 <!-- ── VIDEO CTA ────────────────────────────────────────────────────── -->
 <div class="video-cta-wrap" id="video-cta-wrap">
