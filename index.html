@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-Prowler — Your Documents. Claude, Muse, and Grok AI. Any Device.</title>
-<meta name="description" content="AI-Prowler is a free Windows desktop app that gives Claude, Muse, and Grok AI 98 tools and instant search over your local documents. $10/month adds mobile access plus the Remote Control and Contractor Jobs apps. $20/month/seat for full team server mode with the HR Admin and HR Employee Portal apps. Your data stays on your machine.">
+<meta name="description" content="AI-Prowler is a free Windows desktop app that gives Claude, Muse, and Grok AI 100+ tools and instant search over your local documents. $10/month adds mobile access plus the Remote Control and Contractor Jobs apps. $20/month/seat for full team server mode with the HR Admin and HR Employee Portal apps. Your data stays on your machine.">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -450,20 +450,19 @@ list-style: none;
 margin-bottom: 1.8rem;
 }
 .price-features li {
-display: flex;
-align-items: flex-start;
-gap: 0.6rem;
+position: relative;
 font-size: 0.88rem;
 color: var(--grey-light);
-padding: 0.35rem 0;
+padding: 0.35rem 0 0.35rem 1.4rem;
 line-height: 1.4;
 }
 .price-features li::before {
 content: '✓';
+position: absolute;
+left: 0;
+top: 0.4rem;
 color: var(--green);
 font-weight: 700;
-flex-shrink: 0;
-margin-top: 0.05rem;
 }
 .price-features li.indent {
 padding-left: 1rem;
@@ -580,7 +579,35 @@ width: 100%;
 text-align: center;
 margin-top: 0.5rem;
 }
+.hero-pitch {
+display: block;
+max-width: 760px;
+margin: 0 auto 1.8rem;
+font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+font-weight: 700;
+line-height: 1.4;
+color: var(--grey-light);
+letter-spacing: -0.01em;
+}
+.hero-pitch strong { color: var(--white); }
+.hero-pitch em { font-style: normal; color: var(--green); }
+.apps-table-wrap { overflow-x: auto; margin-top: 1rem; }
+.apps-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.apps-table th, .apps-table td { border-bottom: 1px solid var(--navy-border); padding: 0.6rem 0.5rem; text-align: center; vertical-align: middle; }
+.apps-table thead th { color: var(--white); font-weight: 700; font-size: 0.82rem; line-height: 1.3; }
+.apps-table thead th span { color: var(--grey); font-weight: 500; font-size: 0.76rem; }
+.apps-table tbody th { text-align: left; font-weight: 600; color: var(--grey-light); }
+.apps-table a { color: var(--blue-bright); text-decoration: none; }
+.apps-table a:hover { text-decoration: underline; }
+.apps-table td.yes { color: var(--green); font-weight: 800; font-size: 1rem; }
+.apps-table td.no { color: var(--grey); }
+.apps-note { display: block; font-size: 0.72rem; font-weight: 500; color: var(--grey); margin-top: 0.15rem; }
+.apps-caption { font-size: 0.8rem; color: var(--grey); margin-top: 0.7rem; line-height: 1.5; }
 @media (max-width: 640px) {
+.apps-table { font-size: 0.76rem; }
+.apps-table th, .apps-table td { padding: 0.5rem 0.25rem; }
+.apps-table thead th { font-size: 0.72rem; }
+.apps-table thead th span, .apps-note { font-size: 0.66rem; }
 nav { padding: 0 4%; }
 .nav-links { display: none; }
 section { padding: 60px 4%; }
@@ -635,6 +662,7 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
 <section class="hero">
+<p class="hero-pitch"><strong>AI-Prowler&trade;</strong> &mdash; the fastest way to integrate <em>the most advanced AI</em> into your business.</p>
 <span class="hero-eyebrow">Windows Desktop App &mdash; Free</span>
 <h1>Your documents.<br><em>Claude, Muse, and Grok AI.</em><br>Any device.</h1>
 <p class="hero-sub">
@@ -691,7 +719,7 @@ then builds a private ChromaDB vector database on your machine.</p>
 <div class="step-num">02</div>
 <h3>Ask Claude, Muse, or Grok anything</h3>
 <p>Open Claude Desktop, or connect Claude.ai, Muse, or Grok on the web or mobile.
-Your AI automatically discovers AI-Prowler&rsquo;s 98 tools via MCP and uses them to search, expand, and reason over your
+Your AI automatically discovers AI-Prowler&rsquo;s 100+ tools via MCP and uses them to search, expand, and reason over your
 documents &mdash; going as deep as needed to answer your question.</p>
 </div>
 <div class="step">
@@ -710,7 +738,7 @@ Claude.ai, Muse, or Grok from your phone, tablet, or any browser to reach your d
 <div class="features-inner">
 <p class="section-label">Features</p>
 <h2 class="section-title">Everything Claude, Muse, and Grok AI need to know your business.</h2>
-<p class="section-sub">98 MCP tools. Bilingual English &amp; Spanish indexing. Zero cloud uploads.</p>
+<p class="section-sub">100+ MCP tools. Bilingual English &amp; Spanish indexing. Zero cloud uploads.</p>
 <div class="features-grid">
 <div class="feature-card">
 <span class="feature-icon">&#128269;</span>
@@ -728,7 +756,7 @@ no retraining, no GPU required.</p>
 </div>
 <div class="feature-card">
 <span class="feature-icon">&#128241;</span>
-<h3>Field Service Tools</h3>
+<h3>Mobile Contractor Field Service Jobs Tool</h3>
 <p>Built-in route optimization, weather checks, job tracking spreadsheet
 integration, SMS and WhatsApp messaging for field crew &mdash; all from
 a Claude, Muse, or Grok conversation.</p>
@@ -779,7 +807,7 @@ from any device.
 <div class="price-period">Always free &mdash; no trial, no expiry</div>
 <hr class="price-divider">
 <ul class="price-features">
-<li>Full Agentic RAG &mdash; 98 MCP tools</li>
+<li>Full Agentic RAG &mdash; 100+ MCP tools</li>
 <li>Unlimited document indexing (65+ formats)</li>
 <li>Self-learning knowledge base</li>
 <li>Field service &amp; job tracker tools</li>
@@ -839,6 +867,8 @@ Get Mobile Access &rarr;
 <li>Role-based access: owner, manager, staff, field crew</li>
 <li>Per-user data scopes &amp; private collections</li>
 <li>Admin tab &mdash; add, remove, and manage seats</li>
+<li>&#128241; <strong>Remote Control App</strong> &mdash; on each team member&rsquo;s Personal AI-Prowler (personal files only, not the shared server) &mdash; <a href="remote-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
+<li>&#128295; <strong>Contractor Jobs App</strong> &mdash; mobile contractor field service jobs for the whole crew, with role-based access &mdash; <a href="jobs-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#128188; <strong>HR Admin App</strong> &mdash; hiring, onboarding, time, payroll, compliance &amp; offboarding &mdash; <a href="hr-admin-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#129706; <strong>HR Employee Portal App</strong> &mdash; time clock, schedule, PTO, pay, documents &amp; training for every employee &mdash; <a href="hr-portal-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>SMS &amp; WhatsApp messaging for field crew</li>
@@ -859,9 +889,11 @@ Get AI-Prowler Server Mode &rarr;
 <p class="section-label">Mobile Apps</p>
 <h2 class="section-title">Four mobile apps. No app store required.</h2>
 <p class="section-sub" style="margin-bottom:3rem;">
-Every AI-Prowler Personal and Business subscription includes the Remote Control and Contractor Jobs apps.
-Business server mode adds two HR apps &mdash; HR Admin for owners and managers, and the HR Employee Portal for your whole team.
-They&rsquo;re all Progressive Web Apps (PWAs).
+The Personal Mobile subscription includes the Remote Control and Contractor Jobs apps.
+The Business Server subscription runs the Contractor Jobs app for your whole crew and adds two HR apps &mdash;
+HR Admin for owners and managers, and the HR Employee Portal for your team. For security, the Remote Control app
+(remote access to files) works in personal mode only, never on the shared server &mdash; each Business seat gets it on
+their own Personal AI-Prowler. All four are Progressive Web Apps (PWAs).
 Open them in any phone or tablet browser and add them to your home screen like a native app &mdash;
 no App Store, no Google Play, no install.
 </p>
@@ -1023,7 +1055,19 @@ Every app appears as an icon on your home screen and open full-screen like a nat
 </div>
 <div class="faq-item">
 <div class="faq-q">Which mobile apps come with each plan?</div>
-<div class="faq-a">Personal and Business both include the <a href="remote-pwa.html">Remote Control App</a> and the <a href="jobs-pwa.html">Contractor Jobs App</a>. Business server mode adds the <a href="hr-admin-pwa.html">HR Admin App</a> for owners and managers and the <a href="hr-portal-pwa.html">HR Employee Portal App</a> for employees. The HR apps run on your AI-Prowler server only and are switched on in the server&rsquo;s Settings &rarr; MCP Tool Configuration.</div>
+<div class="faq-a">The mobile apps need a mobile subscription, because they reach your PC through the secure tunnel. Here&rsquo;s what each plan includes:
+<div class="apps-table-wrap">
+<table class="apps-table">
+<thead><tr><th scope="col">Mobile app</th><th scope="col">Desktop<br><span>Free</span></th><th scope="col">Personal Mobile<br><span>$10/month</span></th><th scope="col">Business Server<br><span>$20/seat/month</span></th></tr></thead>
+<tbody>
+<tr><th scope="row"><a href="remote-pwa.html">Remote Control App</a></th><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;<span class="apps-note">on each seat&rsquo;s Personal install</span></td></tr>
+<tr><th scope="row"><a href="jobs-pwa.html">Contractor Jobs App</a></th><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+<tr><th scope="row"><a href="hr-admin-pwa.html">HR Admin App</a></th><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+<tr><th scope="row"><a href="hr-portal-pwa.html">HR Employee Portal App</a></th><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
+</tbody>
+</table>
+</div>
+<p class="apps-caption">For security, the Remote Control app (remote file access) runs in personal mode only &mdash; never on the shared Business server. Business seats include a Personal AI-Prowler, so each team member still gets Remote Control for their own files. The HR apps run on your AI-Prowler server and are switched on in the server&rsquo;s Settings &rarr; MCP Tool Configuration.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-q">Does Business include server hardware or installation support?</div>
