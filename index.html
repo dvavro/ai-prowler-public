@@ -603,6 +603,96 @@ letter-spacing: -0.01em;
 .apps-table td.no { color: var(--grey); }
 .apps-note { display: block; font-size: 0.72rem; font-weight: 500; color: var(--grey); margin-top: 0.15rem; }
 .apps-caption { font-size: 0.8rem; color: var(--grey); margin-top: 0.7rem; line-height: 1.5; }
+/* ── Hero mobile-app showcase ─────────────────────────────────────────── */
+.sc { position: relative; max-width: 860px; margin: 0 auto 2.6rem; display: grid;
+  grid-template-columns: 1fr auto; gap: 2.4rem; align-items: center; text-align: left;
+  background: linear-gradient(180deg, rgba(22,27,34,0.85), rgba(13,17,23,0.6));
+  border: 1px solid var(--navy-border); border-radius: 20px; padding: 1.8rem 2rem;
+  --acc: #4DA6FF; --acc-dim: rgba(77,166,255,0.12); --acc-border: rgba(77,166,255,0.35); }
+.sc[data-app="jobs"]   { --acc: #22C55E; --acc-dim: rgba(34,197,94,0.12);  --acc-border: rgba(34,197,94,0.35); }
+.sc[data-app="portal"] { --acc: #F59E0B; --acc-dim: rgba(245,158,11,0.12); --acc-border: rgba(245,158,11,0.35); }
+.sc[data-app="admin"]  { --acc: #A855F7; --acc-dim: rgba(168,85,247,0.12); --acc-border: rgba(168,85,247,0.35); }
+.sc-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--grey); margin-bottom: 0.9rem; }
+.sc-kicker b { color: var(--white); font-weight: 700; }
+.sc-copy { min-height: 250px; display: flex; flex-direction: column; }
+.sc-app { display: none; }
+.sc-app.on { display: block; animation: scIn 0.45s ease both; }
+.sc-name { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; color: var(--white); }
+.sc-name span { color: var(--acc); }
+.sc-line { font-size: 0.98rem; color: var(--grey-light); line-height: 1.6; margin: 0.5rem 0 0.9rem; max-width: 440px; }
+.sc-badge { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; font-weight: 700;
+  color: var(--acc); background: var(--acc-dim); border: 1px solid var(--acc-border);
+  padding: 0.35rem 0.8rem; border-radius: 999px; }
+.sc-badge small { color: var(--grey-light); font-weight: 500; font-size: 0.76rem; }
+.sc-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: auto; padding-top: 1.3rem; }
+.sc-tab { appearance: none; background: transparent; border: 0; color: var(--grey); font-family: var(--sans);
+  font-size: 0.74rem; font-weight: 600; text-align: left; cursor: pointer; padding: 0; line-height: 1.3; }
+.sc-tab:hover, .sc-tab:focus-visible { color: var(--white); outline: none; }
+.sc-tab.on { color: var(--white); }
+.sc-bar { display: block; height: 3px; border-radius: 2px; background: var(--navy-border); margin-bottom: 0.45rem; overflow: hidden; }
+.sc-bar i { display: block; height: 100%; width: 0; background: var(--acc); }
+.sc-tab.done .sc-bar i { width: 100%; background: var(--grey); }
+.sc-tab.on .sc-bar i { animation: scFill var(--dur, 7.8s) linear forwards; }
+.sc.paused .sc-tab.on .sc-bar i { animation-play-state: paused; }
+.sc-hint { font-size: 0.7rem; color: var(--grey); margin-top: 0.6rem; }
+/* phone */
+.sc-phone { text-align: left; width: 236px; background: #0a0f14; border: 2px solid #2a3040; border-radius: 34px; padding: 10px;
+  box-shadow: 0 0 50px var(--acc-dim), 0 18px 50px rgba(0,0,0,0.55); transition: box-shadow 0.5s; }
+.sc-notch { width: 74px; height: 18px; background: #0a0f14; border: 2px solid #2a3040; border-top: none;
+  border-radius: 0 0 12px 12px; margin: 0 auto 8px; }
+.sc-screen { position: relative; height: 430px; background: #0d1117; border-radius: 22px; overflow: hidden; }
+.sc-s { position: absolute; inset: 0; opacity: 0; transform: translateX(14px); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; }
+.sc-s.on { opacity: 1; transform: none; }
+.sc-dots { display: flex; justify-content: center; gap: 6px; margin-top: 9px; }
+.sc-dots i { width: 6px; height: 6px; border-radius: 50%; background: #2a3040; transition: background 0.3s; }
+.sc-dots i.on { background: var(--acc); }
+/* mock UI inside the phone */
+.m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid #21262d; }
+.m-title { font-size: 0.7rem; font-weight: 700; color: #f0f6fc; }
+.m-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 6px var(--acc); }
+.m-sec { padding: 8px 12px 4px; font-size: 0.52rem; font-weight: 700; color: var(--grey); text-transform: uppercase; letter-spacing: 0.1em; }
+.m-row { margin: 0 10px 6px; background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 7px 9px;
+  display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.m-row.hi { border-color: var(--acc-border); background: var(--acc-dim); }
+.m-n { font-size: 0.6rem; font-weight: 700; color: #f0f6fc; }
+.m-sub { font-size: 0.5rem; color: var(--grey); }
+.m-big { font-size: 0.7rem; font-weight: 800; font-family: var(--mono); color: var(--acc); white-space: nowrap; }
+.m-tag { font-size: 0.47rem; padding: 2px 5px; border-radius: 4px; font-weight: 700; white-space: nowrap; }
+.t-a { background: var(--acc-dim); border: 1px solid var(--acc-border); color: var(--acc); }
+.t-g { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: #22C55E; }
+.t-o { background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.4); color: #F97316; }
+.t-n { background: #21262d; color: var(--grey); }
+.m-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 6px 10px 6px; }
+.m-tile { background: #161b22; border: 1px solid #21262d; border-radius: 8px; padding: 7px 8px; }
+.m-tn { font-size: 0.92rem; font-weight: 800; font-family: var(--mono); color: var(--acc); line-height: 1.1; }
+.m-tl { font-size: 0.46rem; color: var(--grey); text-transform: uppercase; letter-spacing: 0.06em; }
+.m-btn { display: block; text-align: center; font-size: 0.56rem; font-weight: 700; padding: 6px 0; border-radius: 6px; margin: 4px 10px; }
+.m-btn.solid { background: var(--acc); color: #0d1117; }
+.m-btn.ghost { border: 1px solid var(--acc-border); color: var(--acc); }
+.m-hero { margin: 6px 10px 8px; background: var(--acc-dim); border: 1px solid var(--acc-border); border-radius: 10px; padding: 10px; text-align: center; }
+.m-clock { font-size: 1.25rem; font-weight: 800; font-family: var(--mono); color: var(--acc); }
+.m-bar { height: 5px; background: #21262d; border-radius: 3px; overflow: hidden; margin-top: 4px; width: 100%; }
+.m-bar > i { display: block; height: 100%; background: var(--acc); }
+.m-search { margin: 8px 10px; background: #161b22; border: 1px solid var(--acc-border); border-radius: 8px; padding: 7px 9px; font-size: 0.56rem; color: #f0f6fc; }
+.m-kv { display: flex; justify-content: space-between; padding: 3px 12px; font-size: 0.56rem; color: var(--grey); }
+.m-kv b { color: #f0f6fc; font-family: var(--mono); font-weight: 600; }
+@keyframes scFill { from { width: 0; } to { width: 100%; } }
+@keyframes scIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 760px) {
+  .sc { grid-template-columns: 1fr; padding: 1.3rem 1rem; gap: 1.2rem; justify-items: center; text-align: center; }
+  .sc-copy { min-height: 0; align-items: center; }
+  .sc-line { margin-left: auto; margin-right: auto; }
+  .sc-tabs { width: 100%; }
+  .sc-tab { text-align: center; font-size: 0.68rem; }
+  .sc-phone { width: 220px; }
+  .sc-badge { flex-wrap: wrap; justify-content: center; text-align: center; }
+  .sc-screen { height: 400px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sc-tab.on .sc-bar i { animation: none; width: 100%; }
+  .sc-s { transition: none; }
+}
 @media (max-width: 640px) {
 .apps-table { font-size: 0.76rem; }
 .apps-table th, .apps-table td { padding: 0.5rem 0.25rem; }
@@ -663,6 +753,61 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
 <!-- ── HERO ─────────────────────────────────────────────────────────── -->
 <section class="hero">
 <p class="hero-pitch"><strong>AI-Prowler&trade;</strong> &mdash; the fastest way to integrate <em>the most advanced AI</em> into your business.</p>
+<!-- ── MOBILE APP SHOWCASE ── -->
+<div class="sc" id="app-showcase" data-app="remote" aria-roledescription="carousel" aria-label="AI-Prowler mobile apps">
+<div class="sc-copy">
+<p class="sc-kicker"><b>4 mobile apps</b> for your business &middot; no app store needed</p>
+<div class="sc-app" data-k="remote"><div class="sc-name">Remote Control <span>App</span></div><p class="sc-line">Your whole knowledge base in your pocket. Search every document, grab any file from your PC, and upload job photos straight from your phone.</p><span class="sc-badge">&#10003; Included in the Mobile subscription <small>&middot; $10/mo &middot; personal install</small></span></div><div class="sc-app" data-k="jobs"><div class="sc-name">Contractor <span>Jobs</span> App</div><p class="sc-line">Your crew's day on one screen: today's schedule, one-tap clock in and out, before-and-after photos, and invoices sent before they leave the driveway.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="portal"><div class="sc-name">HR <span>Employee Portal</span> App</div><p class="sc-line">Self-service for every employee: time clock, schedule, PTO requests, pay and benefits, the handbook, trainings, and an AI assistant for HR questions.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div><div class="sc-app" data-k="admin"><div class="sc-name">HR <span>Admin</span> App</div><p class="sc-line">Run HR from your phone, from hire to retire: recruiting, onboarding with I-9 and W-4 tracking, time and attendance, payroll records, compliance and offboarding.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div>
+<div class="sc-tabs" role="tablist"><button type="button" class="sc-tab" data-i="0"><span class="sc-bar"><i></i></span>Remote Control</button><button type="button" class="sc-tab" data-i="1"><span class="sc-bar"><i></i></span>Contractor Jobs</button><button type="button" class="sc-tab" data-i="2"><span class="sc-bar"><i></i></span>HR Employee Portal</button><button type="button" class="sc-tab" data-i="3"><span class="sc-bar"><i></i></span>HR Admin</button></div>
+<p class="sc-hint">Tap an app to see it &middot; <a href="#mobile-apps" style="color:var(--blue-bright);text-decoration:none;">compare plans &rarr;</a></p>
+</div>
+<div><div class="sc-phone" aria-hidden="true"><div class="sc-notch"></div><div class="sc-screen"><div class="sc-group" data-k="remote"><div class="sc-s"><div class="m-nav"><div class="m-title">🖥️ AI-Prowler Remote</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">3.8k</div><div class="m-tl">Chunks</div></div><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Tracked dirs</div></div><div class="m-tile"><div class="m-tn">65+</div><div class="m-tl">File types</div></div><div class="m-tile"><div class="m-tn">100+</div><div class="m-tl">MCP tools</div></div></div><div class="m-sec">Status</div><div class="m-row"><div><div class="m-n">Knowledge base</div><div class="m-sub">Ready · searchable</div></div><span class="m-tag t-g">Online</span></div><div class="m-row"><div><div class="m-n">PC connection</div><div class="m-sub">Secure tunnel</div></div><span class="m-tag t-g">Live</span></div><div class="m-row"><div><div class="m-n">Learnings</div><div class="m-sub">214 saved lessons</div></div><span class="m-tag t-a">View</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🔍 Search</div><div class="m-dot"></div></div><div class="m-search">Johnson contract payment terms</div><div class="m-sec">Top results</div><div class="m-row hi"><div><div class="m-n">Johnson_Contract_2024.pdf</div><div class="m-sub">§4.2 net-30, 1.5% late fee</div></div><span class="m-tag t-a">0.91</span></div><div class="m-row"><div><div class="m-n">Invoices_Q3.xlsx</div><div class="m-sub">Johnson — paid in 12 days</div></div><span class="m-tag t-a">0.78</span></div><div class="m-row"><div><div class="m-n">Email: Re: early-pay discount</div><div class="m-sub">10% if paid in 10 days</div></div><span class="m-tag t-a">0.74</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📁 Files</div><div class="m-dot"></div></div><div class="m-sec">Documents › Customers</div><div class="m-row"><div><div class="m-n">📄 Johnson_Contract_2024.pdf</div><div class="m-sub">1.2 MB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📊 Price_List_2026.xlsx</div><div class="m-sub">84 KB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📁 Job Photos</div><div class="m-sub">38 files</div></div><span class="m-tag t-n">Open</span></div><div class="m-btn solid">📷 Upload photo to PC</div></div></div><div class="sc-group" data-k="jobs"><div class="sc-s"><div class="m-nav"><div class="m-title">🔧 Contractor Jobs</div><div class="m-dot"></div></div><div class="m-sec">Today · 3 jobs</div><div class="m-row hi"><div><div class="m-n">08:00 · Johnson Residence</div><div class="m-sub">Window wash · 1234 Oak St</div></div><span class="m-tag t-o">Due now</span></div><div class="m-row"><div><div class="m-n">10:30 · Harbor Cafe</div><div class="m-sub">Pressure wash · Beachside Dr</div></div><span class="m-tag t-n">Next</span></div><div class="m-row"><div><div class="m-n">07:00 · Martinez Home</div><div class="m-sub">Solar panel clean</div></div><span class="m-tag t-g">Done</span></div><div class="m-btn solid">⏱ Clock In</div><div class="m-btn ghost">📍 Navigate</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">Johnson Residence</div><div class="m-dot"></div></div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">01:42:10</div><div class="m-sub">Started 8:00 AM · Quote $280</div></div><div class="m-sec">Photos</div><div class="m-row"><div><div class="m-n">🏠 Before</div><div class="m-sub">8:03 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-row"><div><div class="m-n">✨ After</div><div class="m-sub">9:38 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-btn solid">⏹ Clock Out</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🧾 Invoice</div><div class="m-dot"></div></div><div class="m-sec">Johnson Residence</div><div class="m-kv">Window wash <b>$280.00</b></div><div class="m-kv">Tax (7%) <b>$19.60</b></div><div class="m-row hi" style="margin-top:6px"><div class="m-n">Total due</div><span class="m-big" style="font-size:0.9rem">$299.60</span></div><div class="m-btn solid">📧 Email invoice</div><div class="m-btn ghost">💬 Text invoice</div></div></div><div class="sc-group" data-k="portal"><div class="sc-s"><div class="m-nav"><div class="m-title">🪪 HR Portal</div><div class="m-dot"></div></div><div class="m-sec">Good morning, Jordan</div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">04:31:12</div><div class="m-sub">Clocked in 7:02 AM</div></div><div class="m-btn solid">⏹ Clock Out</div><div class="m-row"><div><div class="m-n">Shift 7:00 – 3:30</div><div class="m-sub">Main St site</div></div><span class="m-tag t-g">On shift</span></div><div class="m-row"><div><div class="m-n">New message from HR</div><div class="m-sub">Holiday schedule posted</div></div><span class="m-tag t-a">New</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🏖 PTO & Time Off</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">56h</div><div class="m-tl">PTO left</div></div><div class="m-tile"><div class="m-tn">24h</div><div class="m-tl">Sick left</div></div></div><div class="m-sec">Request</div><div class="m-kv">Dates <b>Oct 20 – 22</b></div><div class="m-kv">Hours <b>24h PTO</b></div><div class="m-btn solid">Submit request</div><div class="m-sec">My requests</div><div class="m-row"><div><div class="m-n">Sep 2</div><div class="m-sub">Sick · 8h</div></div><span class="m-tag t-g">Approved</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📚 Trainings</div><div class="m-dot"></div></div><div class="m-sec">Assigned to you</div><div class="m-row"><div><div class="m-n">New Hire Orientation</div><div class="m-sub"><div class="m-bar"><i style="width:100%"></i></div></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">Workplace Safety</div><div class="m-sub"><div class="m-bar"><i style="width:60%"></i></div></div></div><span class="m-tag t-a">60%</span></div><div class="m-row"><div><div class="m-n">Harassment Prevention</div><div class="m-sub"><div class="m-bar"><i style="width:0%"></i></div></div></div><span class="m-tag t-n">Start</span></div><div class="m-sec">Ask AI-Prowler</div><div class="m-row"><div><div class="m-n">How much PTO do I earn?</div><div class="m-sub">Answer from your handbook</div></div><span class="m-tag t-a">AI</span></div></div></div><div class="sc-group" data-k="admin"><div class="sc-s"><div class="m-nav"><div class="m-title">💼 HR Admin</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Employees</div></div><div class="m-tile"><div class="m-tn">2</div><div class="m-tl">Onboarding</div></div><div class="m-tile"><div class="m-tn">3</div><div class="m-tl">PTO requests</div></div><div class="m-tile"><div class="m-tn">5</div><div class="m-tl">Tasks due</div></div></div><div class="m-sec">Needs you</div><div class="m-row hi"><div><div class="m-n">PTO · Jordan Reyes</div><div class="m-sub">Oct 20 – 22</div></div><span class="m-tag t-a">Approve</span></div><div class="m-row"><div><div class="m-n">I-9 due · Sam Patel</div><div class="m-sub">Starts Oct 16</div></div><span class="m-tag t-o">2 days</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📋 Onboarding</div><div class="m-dot"></div></div><div class="m-sec">Sam Patel · Field Tech</div><div style="padding:0 12px 6px"><div class="m-bar"><i style="width:62%"></i></div><div class="m-sub" style="margin-top:3px">5 of 8 steps done</div></div><div class="m-row"><div><div class="m-n">Offer letter signed</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row"><div><div class="m-n">W-4 received</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">I-9 verification</div><div class="m-sub"></div></div><span class="m-tag t-o">Due</span></div><div class="m-row"><div><div class="m-n">Safety orientation</div><div class="m-sub"></div></div><span class="m-tag t-n">Pending</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📍 Clock-In Log</div><div class="m-dot"></div></div><div class="m-sec">Today · 9 on the clock</div><div class="m-row"><div><div class="m-n">Jordan Reyes</div><div class="m-sub">In 7:02 · Main St site</div></div><span class="m-big">4h 31m</span></div><div class="m-row"><div><div class="m-n">Chris Owens</div><div class="m-sub">In 7:15 · Warehouse</div></div><span class="m-big">4h 18m</span></div><div class="m-row"><div><div class="m-n">Taylor Kim</div><div class="m-sub">In 8:00 · Office</div></div><span class="m-big">3h 33m</span></div><div class="m-sec">This pay period</div><div class="m-tiles"><div class="m-tile"><div class="m-tn">412h</div><div class="m-tl">Regular</div></div><div class="m-tile"><div class="m-tn">18h</div><div class="m-tl">Overtime</div></div></div></div></div></div></div><div class="sc-dots"><i></i><i></i><i></i></div></div>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('app-showcase');
+  if (!root) return;
+  var apps = root.querySelectorAll('.sc-app'), tabs = root.querySelectorAll('.sc-tab'),
+      groups = root.querySelectorAll('.sc-group'), dots = root.querySelectorAll('.sc-dots i');
+  var SCREEN_MS = 2600, a = 0, s = 0, timer = null, paused = false;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function render(restartBar) {
+    root.setAttribute('data-app', apps[a].getAttribute('data-k'));
+    for (var i = 0; i < apps.length; i++) {
+      apps[i].classList.toggle('on', i === a);
+      tabs[i].classList.toggle('done', i < a);
+      if (i === a && restartBar) { tabs[i].classList.remove('on'); void tabs[i].offsetWidth; }
+      tabs[i].classList.toggle('on', i === a);
+      tabs[i].setAttribute('aria-selected', i === a ? 'true' : 'false');
+      var sc = groups[i].querySelectorAll('.sc-s');
+      for (var j = 0; j < sc.length; j++) sc[j].classList.toggle('on', i === a && j === s);
+    }
+    for (var d = 0; d < dots.length; d++) dots[d].classList.toggle('on', d === s);
+  }
+  function per() { return groups[a].querySelectorAll('.sc-s').length; }
+  function tick() {
+    if (paused) return;
+    s++;
+    var newApp = false;
+    if (s >= per()) { s = 0; a = (a + 1) % apps.length; newApp = true; }
+    render(newApp);
+    schedule();
+  }
+  function schedule() { clearTimeout(timer); if (!reduce && !paused) timer = setTimeout(tick, SCREEN_MS); }
+  root.style.setProperty('--dur', (SCREEN_MS * 3 / 1000) + 's');
+  for (var t = 0; t < tabs.length; t++) (function (i) {
+    tabs[i].addEventListener('click', function () { a = i; s = 0; render(true); schedule(); });
+  })(t);
+  root.addEventListener('mouseenter', function () { paused = true; root.classList.add('paused'); clearTimeout(timer); });
+  root.addEventListener('mouseleave', function () { paused = false; root.classList.remove('paused'); schedule(); });
+  if (reduce) {
+    // No auto-advance: tapping the phone steps through that app's screens instead.
+    root.querySelector('.sc-phone').addEventListener('click', function () { s = (s + 1) % per(); render(false); });
+  }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) clearTimeout(timer); else schedule(); });
+  render(true); schedule();
+})();
+</script>
 <span class="hero-eyebrow">Windows Desktop App &mdash; Free</span>
 <h1>Your documents.<br><em>Claude, Muse, and Grok AI.</em><br>Any device.</h1>
 <p class="hero-sub">
