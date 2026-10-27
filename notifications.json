@@ -12,6 +12,18 @@
       "show_after": "2026-10-24",
       "show_until": "2026-11-24",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.5.0",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.5.0",
+      "body": "Release v9.5.0 Cloudflare tunnel version update for security and Release v9.4.0 Jobs App can now track and logs miles driven for Tax deductions",
+      "link_text": "AI-Prowler v9.5.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.5.0",
+      "show_after": "2026-10-26",
+      "show_until": "2026-11-26",
+      "show_once": true
     }
   ],
   "latest_version": "9.5.0",
