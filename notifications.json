@@ -14,7 +14,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "9.4.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.4.0",
-  "update_notes": "Release v9.4.0 Jobs App can now track and logs miles driven for Tax deductions"
+  "latest_version": "9.5.0",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.5.0",
+  "update_notes": "Release v9.5.0 Cloudflare tunnel version update for security"
 }
