@@ -12,6 +12,18 @@
       "show_after": "2026-10-26",
       "show_until": "2026-11-26",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.6.0",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.6.0",
+      "body": "Release v9.6.0 added Desk Help a mobile PWA app for customers to file service requests and/or employees to file internal service requests.",
+      "link_text": "AI-Prowler v9.6.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.6.0",
+      "show_after": "2026-10-28",
+      "show_until": "2026-11-28",
+      "show_once": true
     }
   ],
   "latest_version": "9.6.0",
