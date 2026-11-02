@@ -12,6 +12,18 @@
       "show_after": "2026-10-28",
       "show_until": "2026-11-28",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.7.0",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.7.0",
+      "body": "Release v9.7.0 added a service desk and 4 agents to automate the Jobs, HR, Service Desk, Booking and scheduling.",
+      "link_text": "AI-Prowler v9.7.0",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.7.0",
+      "show_after": "2026-11-01",
+      "show_until": "2026-12-02",
+      "show_once": true
     }
   ],
   "latest_version": "9.7.0",
