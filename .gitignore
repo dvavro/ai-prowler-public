@@ -1,2 +1,4 @@
 notifications.json 
 welcome_ad.json 
+# backups written by AI-Prowler's file tools: never publish them
+*.bak[0-9]*

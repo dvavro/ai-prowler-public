@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-Prowler — Your Documents. Claude, Muse, Grok, and Grok Bot AI. Any Device.</title>
-<meta name="description" content="AI-Prowler is a free Windows desktop app that gives Claude, Muse, Grok, and Grok Bot AI 100+ tools and instant search over your local documents. $10/month adds mobile access plus the Remote Control and Contractor Jobs apps. $20/month/seat for full team server mode with the HR Admin and HR Employee Portal apps. Your data stays on your machine.">
+<meta name="description" content="AI-Prowler is a free Windows desktop app that gives Claude, Muse, Grok, and Grok Bot AI 100+ tools and instant search over your local documents. $10/month adds mobile access plus the Remote Control, Contractor Jobs and Service Desk apps, with AI agents that work them for you. $20/month/seat for full team server mode with the HR Admin and HR Employee Portal apps. Your data stays on your machine.">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -615,6 +615,7 @@ letter-spacing: -0.01em;
   --acc: #4DA6FF; --acc-dim: rgba(77,166,255,0.12); --acc-border: rgba(77,166,255,0.35); }
 .sc[data-app="jobs"]   { --acc: #22C55E; --acc-dim: rgba(34,197,94,0.12);  --acc-border: rgba(34,197,94,0.35); }
 .sc[data-app="portal"] { --acc: #F59E0B; --acc-dim: rgba(245,158,11,0.12); --acc-border: rgba(245,158,11,0.35); }
+.sc[data-app="desk"]   { --acc: #22D3EE; --acc-dim: rgba(34,211,238,0.12); --acc-border: rgba(34,211,238,0.35); }
 .sc[data-app="admin"]  { --acc: #A855F7; --acc-dim: rgba(168,85,247,0.12); --acc-border: rgba(168,85,247,0.35); }
 .sc-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--grey); margin-bottom: 0.9rem; }
@@ -734,6 +735,7 @@ footer { flex-direction: column; text-align: center; }
 <ul class="nav-links">
 <li><a href="#how">How It Works</a></li>
 <li><a href="#features">Features</a></li>
+<li><a href="#agents">AI Agents</a></li>
 <li><a href="#mobile-apps">Mobile Apps</a></li>
 <li><a href="#pricing">Pricing</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -786,12 +788,12 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
 <!-- ── MOBILE APP SHOWCASE ── -->
 <div class="sc" id="app-showcase" data-app="remote" aria-roledescription="carousel" aria-label="AI-Prowler mobile apps">
 <div class="sc-copy">
-<p class="sc-kicker"><b>4 mobile apps</b> for your business &middot; no app store needed</p>
-<div class="sc-app" data-k="remote"><div class="sc-name">Remote Control <span>App</span></div><p class="sc-line">Your whole knowledge base in your pocket. Search every document, grab any file from your PC, and upload job photos straight from your phone.</p><span class="sc-badge">&#10003; Included in the Mobile subscription <small>&middot; $10/mo &middot; personal install</small></span></div><div class="sc-app" data-k="jobs"><div class="sc-name">Contractor <span>Jobs</span> App</div><p class="sc-line">Your crew's day on one screen: today's schedule, one-tap clock in and out, before-and-after photos, and invoices sent before they leave the driveway.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="portal"><div class="sc-name">HR <span>Employee Portal</span> App</div><p class="sc-line">Self-service for every employee: time clock, schedule, PTO requests, pay and benefits, the handbook, trainings, and an AI assistant for HR questions.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div><div class="sc-app" data-k="admin"><div class="sc-name">HR <span>Admin</span> App</div><p class="sc-line">Run HR from your phone, from hire to retire: recruiting, onboarding with I-9 and W-4 tracking, time and attendance, payroll records, compliance and offboarding.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div>
-<div class="sc-tabs" role="tablist"><button type="button" class="sc-tab" data-i="0"><span class="sc-bar"><i></i></span>Remote Control</button><button type="button" class="sc-tab" data-i="1"><span class="sc-bar"><i></i></span>Contractor Jobs</button><button type="button" class="sc-tab" data-i="2"><span class="sc-bar"><i></i></span>HR Employee Portal</button><button type="button" class="sc-tab" data-i="3"><span class="sc-bar"><i></i></span>HR Admin</button></div>
+<p class="sc-kicker"><b>5 mobile apps</b> for your business &middot; no app store needed</p>
+<div class="sc-app" data-k="remote"><div class="sc-name">Remote Control <span>App</span></div><p class="sc-line">Your whole knowledge base in your pocket. Search every document, grab any file from your PC, and upload job photos straight from your phone.</p><span class="sc-badge">&#10003; Included in the Mobile subscription <small>&middot; $10/mo &middot; personal install</small></span></div><div class="sc-app" data-k="jobs"><div class="sc-name">Contractor <span>Jobs</span> App</div><p class="sc-line">Your crew's day on one screen: today's schedule, one-tap clock in and out, before-and-after photos, and invoices sent before they leave the driveway.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="desk"><div class="sc-name">Service <span>Desk</span> App</div><p class="sc-line">Every customer request in one place: tickets, bookings and one-tap approvals &mdash; plus a support page where customers file requests, book a time and follow progress.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="portal"><div class="sc-name">HR <span>Employee Portal</span> App</div><p class="sc-line">Self-service for every employee: time clock, schedule, PTO requests, pay and benefits, the handbook, trainings, and an AI assistant for HR questions.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div><div class="sc-app" data-k="admin"><div class="sc-name">HR <span>Admin</span> App</div><p class="sc-line">Run HR from your phone, from hire to retire: recruiting, onboarding with I-9 and W-4 tracking, time and attendance, payroll records, compliance and offboarding.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div>
+<div class="sc-tabs" role="tablist"><button type="button" class="sc-tab" data-i="0"><span class="sc-bar"><i></i></span>Remote Control</button><button type="button" class="sc-tab" data-i="1"><span class="sc-bar"><i></i></span>Contractor Jobs</button><button type="button" class="sc-tab" data-i="2"><span class="sc-bar"><i></i></span>Service Desk</button><button type="button" class="sc-tab" data-i="3"><span class="sc-bar"><i></i></span>HR Employee Portal</button><button type="button" class="sc-tab" data-i="4"><span class="sc-bar"><i></i></span>HR Admin</button></div>
 <p class="sc-hint">Tap an app to see it &middot; <a href="#mobile-apps" style="color:var(--blue-bright);text-decoration:none;">compare plans &rarr;</a></p>
 </div>
-<div><div class="sc-phone" aria-hidden="true"><div class="sc-notch"></div><div class="sc-screen"><div class="sc-group" data-k="remote"><div class="sc-s"><div class="m-nav"><div class="m-title">🖥️ AI-Prowler Remote</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">3.8k</div><div class="m-tl">Chunks</div></div><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Tracked dirs</div></div><div class="m-tile"><div class="m-tn">65+</div><div class="m-tl">File types</div></div><div class="m-tile"><div class="m-tn">100+</div><div class="m-tl">MCP tools</div></div></div><div class="m-sec">Status</div><div class="m-row"><div><div class="m-n">Knowledge base</div><div class="m-sub">Ready · searchable</div></div><span class="m-tag t-g">Online</span></div><div class="m-row"><div><div class="m-n">PC connection</div><div class="m-sub">Secure tunnel</div></div><span class="m-tag t-g">Live</span></div><div class="m-row"><div><div class="m-n">Learnings</div><div class="m-sub">214 saved lessons</div></div><span class="m-tag t-a">View</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🔍 Search</div><div class="m-dot"></div></div><div class="m-search">Johnson contract payment terms</div><div class="m-sec">Top results</div><div class="m-row hi"><div><div class="m-n">Johnson_Contract_2024.pdf</div><div class="m-sub">§4.2 net-30, 1.5% late fee</div></div><span class="m-tag t-a">0.91</span></div><div class="m-row"><div><div class="m-n">Invoices_Q3.xlsx</div><div class="m-sub">Johnson — paid in 12 days</div></div><span class="m-tag t-a">0.78</span></div><div class="m-row"><div><div class="m-n">Email: Re: early-pay discount</div><div class="m-sub">10% if paid in 10 days</div></div><span class="m-tag t-a">0.74</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📁 Files</div><div class="m-dot"></div></div><div class="m-sec">Documents › Customers</div><div class="m-row"><div><div class="m-n">📄 Johnson_Contract_2024.pdf</div><div class="m-sub">1.2 MB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📊 Price_List_2026.xlsx</div><div class="m-sub">84 KB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📁 Job Photos</div><div class="m-sub">38 files</div></div><span class="m-tag t-n">Open</span></div><div class="m-btn solid">📷 Upload photo to PC</div></div></div><div class="sc-group" data-k="jobs"><div class="sc-s"><div class="m-nav"><div class="m-title">🔧 Contractor Jobs</div><div class="m-dot"></div></div><div class="m-sec">Today · 3 jobs</div><div class="m-row hi"><div><div class="m-n">08:00 · Johnson Residence</div><div class="m-sub">Window wash · 1234 Oak St</div></div><span class="m-tag t-o">Due now</span></div><div class="m-row"><div><div class="m-n">10:30 · Harbor Cafe</div><div class="m-sub">Pressure wash · Beachside Dr</div></div><span class="m-tag t-n">Next</span></div><div class="m-row"><div><div class="m-n">07:00 · Martinez Home</div><div class="m-sub">Solar panel clean</div></div><span class="m-tag t-g">Done</span></div><div class="m-btn solid">⏱ Clock In</div><div class="m-btn ghost">📍 Navigate</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">Johnson Residence</div><div class="m-dot"></div></div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">01:42:10</div><div class="m-sub">Started 8:00 AM · Quote $280</div></div><div class="m-sec">Photos</div><div class="m-row"><div><div class="m-n">🏠 Before</div><div class="m-sub">8:03 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-row"><div><div class="m-n">✨ After</div><div class="m-sub">9:38 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-btn solid">⏹ Clock Out</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🧾 Invoice</div><div class="m-dot"></div></div><div class="m-sec">Johnson Residence</div><div class="m-kv">Window wash <b>$280.00</b></div><div class="m-kv">Tax (7%) <b>$19.60</b></div><div class="m-row hi" style="margin-top:6px"><div class="m-n">Total due</div><span class="m-big" style="font-size:0.9rem">$299.60</span></div><div class="m-btn solid">📧 Email invoice</div><div class="m-btn ghost">💬 Text invoice</div></div></div><div class="sc-group" data-k="portal"><div class="sc-s"><div class="m-nav"><div class="m-title">🪪 HR Portal</div><div class="m-dot"></div></div><div class="m-sec">Good morning, Jordan</div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">04:31:12</div><div class="m-sub">Clocked in 7:02 AM</div></div><div class="m-btn solid">⏹ Clock Out</div><div class="m-row"><div><div class="m-n">Shift 7:00 – 3:30</div><div class="m-sub">Main St site</div></div><span class="m-tag t-g">On shift</span></div><div class="m-row"><div><div class="m-n">New message from HR</div><div class="m-sub">Holiday schedule posted</div></div><span class="m-tag t-a">New</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🏖 PTO & Time Off</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">56h</div><div class="m-tl">PTO left</div></div><div class="m-tile"><div class="m-tn">24h</div><div class="m-tl">Sick left</div></div></div><div class="m-sec">Request</div><div class="m-kv">Dates <b>Oct 20 – 22</b></div><div class="m-kv">Hours <b>24h PTO</b></div><div class="m-btn solid">Submit request</div><div class="m-sec">My requests</div><div class="m-row"><div><div class="m-n">Sep 2</div><div class="m-sub">Sick · 8h</div></div><span class="m-tag t-g">Approved</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📚 Trainings</div><div class="m-dot"></div></div><div class="m-sec">Assigned to you</div><div class="m-row"><div><div class="m-n">New Hire Orientation</div><div class="m-sub"><div class="m-bar"><i style="width:100%"></i></div></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">Workplace Safety</div><div class="m-sub"><div class="m-bar"><i style="width:60%"></i></div></div></div><span class="m-tag t-a">60%</span></div><div class="m-row"><div><div class="m-n">Harassment Prevention</div><div class="m-sub"><div class="m-bar"><i style="width:0%"></i></div></div></div><span class="m-tag t-n">Start</span></div><div class="m-sec">Ask AI-Prowler</div><div class="m-row"><div><div class="m-n">How much PTO do I earn?</div><div class="m-sub">Answer from your handbook</div></div><span class="m-tag t-a">AI</span></div></div></div><div class="sc-group" data-k="admin"><div class="sc-s"><div class="m-nav"><div class="m-title">💼 HR Admin</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Employees</div></div><div class="m-tile"><div class="m-tn">2</div><div class="m-tl">Onboarding</div></div><div class="m-tile"><div class="m-tn">3</div><div class="m-tl">PTO requests</div></div><div class="m-tile"><div class="m-tn">5</div><div class="m-tl">Tasks due</div></div></div><div class="m-sec">Needs you</div><div class="m-row hi"><div><div class="m-n">PTO · Jordan Reyes</div><div class="m-sub">Oct 20 – 22</div></div><span class="m-tag t-a">Approve</span></div><div class="m-row"><div><div class="m-n">I-9 due · Sam Patel</div><div class="m-sub">Starts Oct 16</div></div><span class="m-tag t-o">2 days</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📋 Onboarding</div><div class="m-dot"></div></div><div class="m-sec">Sam Patel · Field Tech</div><div style="padding:0 12px 6px"><div class="m-bar"><i style="width:62%"></i></div><div class="m-sub" style="margin-top:3px">5 of 8 steps done</div></div><div class="m-row"><div><div class="m-n">Offer letter signed</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row"><div><div class="m-n">W-4 received</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">I-9 verification</div><div class="m-sub"></div></div><span class="m-tag t-o">Due</span></div><div class="m-row"><div><div class="m-n">Safety orientation</div><div class="m-sub"></div></div><span class="m-tag t-n">Pending</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📍 Clock-In Log</div><div class="m-dot"></div></div><div class="m-sec">Today · 9 on the clock</div><div class="m-row"><div><div class="m-n">Jordan Reyes</div><div class="m-sub">In 7:02 · Main St site</div></div><span class="m-big">4h 31m</span></div><div class="m-row"><div><div class="m-n">Chris Owens</div><div class="m-sub">In 7:15 · Warehouse</div></div><span class="m-big">4h 18m</span></div><div class="m-row"><div><div class="m-n">Taylor Kim</div><div class="m-sub">In 8:00 · Office</div></div><span class="m-big">3h 33m</span></div><div class="m-sec">This pay period</div><div class="m-tiles"><div class="m-tile"><div class="m-tn">412h</div><div class="m-tl">Regular</div></div><div class="m-tile"><div class="m-tn">18h</div><div class="m-tl">Overtime</div></div></div></div></div></div></div><div class="sc-dots"><i></i><i></i><i></i></div></div>
+<div><div class="sc-phone" aria-hidden="true"><div class="sc-notch"></div><div class="sc-screen"><div class="sc-group" data-k="remote"><div class="sc-s"><div class="m-nav"><div class="m-title">🖥️ AI-Prowler Remote</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">3.8k</div><div class="m-tl">Chunks</div></div><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Tracked dirs</div></div><div class="m-tile"><div class="m-tn">65+</div><div class="m-tl">File types</div></div><div class="m-tile"><div class="m-tn">100+</div><div class="m-tl">MCP tools</div></div></div><div class="m-sec">Status</div><div class="m-row"><div><div class="m-n">Knowledge base</div><div class="m-sub">Ready · searchable</div></div><span class="m-tag t-g">Online</span></div><div class="m-row"><div><div class="m-n">PC connection</div><div class="m-sub">Secure tunnel</div></div><span class="m-tag t-g">Live</span></div><div class="m-row"><div><div class="m-n">Learnings</div><div class="m-sub">214 saved lessons</div></div><span class="m-tag t-a">View</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🔍 Search</div><div class="m-dot"></div></div><div class="m-search">Johnson contract payment terms</div><div class="m-sec">Top results</div><div class="m-row hi"><div><div class="m-n">Johnson_Contract_2024.pdf</div><div class="m-sub">§4.2 net-30, 1.5% late fee</div></div><span class="m-tag t-a">0.91</span></div><div class="m-row"><div><div class="m-n">Invoices_Q3.xlsx</div><div class="m-sub">Johnson — paid in 12 days</div></div><span class="m-tag t-a">0.78</span></div><div class="m-row"><div><div class="m-n">Email: Re: early-pay discount</div><div class="m-sub">10% if paid in 10 days</div></div><span class="m-tag t-a">0.74</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📁 Files</div><div class="m-dot"></div></div><div class="m-sec">Documents › Customers</div><div class="m-row"><div><div class="m-n">📄 Johnson_Contract_2024.pdf</div><div class="m-sub">1.2 MB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📊 Price_List_2026.xlsx</div><div class="m-sub">84 KB</div></div><span class="m-tag t-a">⬇ Get</span></div><div class="m-row"><div><div class="m-n">📁 Job Photos</div><div class="m-sub">38 files</div></div><span class="m-tag t-n">Open</span></div><div class="m-btn solid">📷 Upload photo to PC</div></div></div><div class="sc-group" data-k="jobs"><div class="sc-s"><div class="m-nav"><div class="m-title">🔧 Contractor Jobs</div><div class="m-dot"></div></div><div class="m-sec">Today · 3 jobs</div><div class="m-row hi"><div><div class="m-n">08:00 · Johnson Residence</div><div class="m-sub">Window wash · 1234 Oak St</div></div><span class="m-tag t-o">Due now</span></div><div class="m-row"><div><div class="m-n">10:30 · Harbor Cafe</div><div class="m-sub">Pressure wash · Beachside Dr</div></div><span class="m-tag t-n">Next</span></div><div class="m-row"><div><div class="m-n">07:00 · Martinez Home</div><div class="m-sub">Solar panel clean</div></div><span class="m-tag t-g">Done</span></div><div class="m-btn solid">⏱ Clock In</div><div class="m-btn ghost">📍 Navigate</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">Johnson Residence</div><div class="m-dot"></div></div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">01:42:10</div><div class="m-sub">Started 8:00 AM · Quote $280</div></div><div class="m-sec">Photos</div><div class="m-row"><div><div class="m-n">🏠 Before</div><div class="m-sub">8:03 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-row"><div><div class="m-n">✨ After</div><div class="m-sub">9:38 AM</div></div><span class="m-tag t-g">✓</span></div><div class="m-btn solid">⏹ Clock Out</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🧾 Invoice</div><div class="m-dot"></div></div><div class="m-sec">Johnson Residence</div><div class="m-kv">Window wash <b>$280.00</b></div><div class="m-kv">Tax (7%) <b>$19.60</b></div><div class="m-row hi" style="margin-top:6px"><div class="m-n">Total due</div><span class="m-big" style="font-size:0.9rem">$299.60</span></div><div class="m-btn solid">📧 Email invoice</div><div class="m-btn ghost">💬 Text invoice</div></div></div><div class="sc-group" data-k="desk"><div class="sc-s"><div class="m-nav"><div class="m-title">🎫 Service Desk</div><div class="m-dot"></div></div><div class="m-sec">My tickets · 3 open</div><div class="m-row hi"><div><div class="m-n">T-0142 · Gutter overflowing</div><div class="m-sub">Rivera Family · 26h waiting</div></div><span class="m-tag t-o">Overdue</span></div><div class="m-row"><div><div class="m-n">T-0145 · Quote for 12 windows</div><div class="m-sub">Harbor Cafe · 🤖 reply drafted</div></div><span class="m-tag t-a">New</span></div><div class="m-row"><div><div class="m-n">T-0139 · Streaks on patio doors</div><div class="m-sub">Lee Residence</div></div><span class="m-tag t-g">Fixed</span></div><div class="m-btn solid">↩ Reply</div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🤖 Agent</div><div class="m-dot"></div></div><div class="m-sec">Waiting for your OK</div><div class="m-row hi"><div><div class="m-n">T-0145 · first reply</div><div class="m-sub">“Could you send a couple of photos? I can then offer a visit this week.”</div></div><span class="m-tag t-a">90%</span></div><div class="m-btn solid">✓ Approve</div><div class="m-btn ghost">✎ Edit</div><div class="m-sec">Practice ratings</div><div class="m-kv">🎫 Tickets <b>👍 18 · 👎 2</b></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">Support · Your Business</div><div class="m-dot"></div></div><div class="m-sec">Exterior windows · T-0147</div><div class="m-row"><div><div class="m-n">Status</div><div class="m-sub">Waiting for confirmation</div></div><span class="m-tag t-a">Booked</span></div><div class="m-kv">Time <b>Wed 1–3</b></div><div class="m-btn ghost">⏩ Tell me if earlier opens</div><div class="m-btn solid">💳 Pay now</div></div></div><div class="sc-group" data-k="portal"><div class="sc-s"><div class="m-nav"><div class="m-title">🪪 HR Portal</div><div class="m-dot"></div></div><div class="m-sec">Good morning, Jordan</div><div class="m-hero"><div class="m-sub">On the clock</div><div class="m-clock">04:31:12</div><div class="m-sub">Clocked in 7:02 AM</div></div><div class="m-btn solid">⏹ Clock Out</div><div class="m-row"><div><div class="m-n">Shift 7:00 – 3:30</div><div class="m-sub">Main St site</div></div><span class="m-tag t-g">On shift</span></div><div class="m-row"><div><div class="m-n">New message from HR</div><div class="m-sub">Holiday schedule posted</div></div><span class="m-tag t-a">New</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">🏖 PTO & Time Off</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">56h</div><div class="m-tl">PTO left</div></div><div class="m-tile"><div class="m-tn">24h</div><div class="m-tl">Sick left</div></div></div><div class="m-sec">Request</div><div class="m-kv">Dates <b>Oct 20 – 22</b></div><div class="m-kv">Hours <b>24h PTO</b></div><div class="m-btn solid">Submit request</div><div class="m-sec">My requests</div><div class="m-row"><div><div class="m-n">Sep 2</div><div class="m-sub">Sick · 8h</div></div><span class="m-tag t-g">Approved</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📚 Trainings</div><div class="m-dot"></div></div><div class="m-sec">Assigned to you</div><div class="m-row"><div><div class="m-n">New Hire Orientation</div><div class="m-sub"><div class="m-bar"><i style="width:100%"></i></div></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">Workplace Safety</div><div class="m-sub"><div class="m-bar"><i style="width:60%"></i></div></div></div><span class="m-tag t-a">60%</span></div><div class="m-row"><div><div class="m-n">Harassment Prevention</div><div class="m-sub"><div class="m-bar"><i style="width:0%"></i></div></div></div><span class="m-tag t-n">Start</span></div><div class="m-sec">Ask AI-Prowler</div><div class="m-row"><div><div class="m-n">How much PTO do I earn?</div><div class="m-sub">Answer from your handbook</div></div><span class="m-tag t-a">AI</span></div></div></div><div class="sc-group" data-k="admin"><div class="sc-s"><div class="m-nav"><div class="m-title">💼 HR Admin</div><div class="m-dot"></div></div><div class="m-tiles"><div class="m-tile"><div class="m-tn">12</div><div class="m-tl">Employees</div></div><div class="m-tile"><div class="m-tn">2</div><div class="m-tl">Onboarding</div></div><div class="m-tile"><div class="m-tn">3</div><div class="m-tl">PTO requests</div></div><div class="m-tile"><div class="m-tn">5</div><div class="m-tl">Tasks due</div></div></div><div class="m-sec">Needs you</div><div class="m-row hi"><div><div class="m-n">PTO · Jordan Reyes</div><div class="m-sub">Oct 20 – 22</div></div><span class="m-tag t-a">Approve</span></div><div class="m-row"><div><div class="m-n">I-9 due · Sam Patel</div><div class="m-sub">Starts Oct 16</div></div><span class="m-tag t-o">2 days</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📋 Onboarding</div><div class="m-dot"></div></div><div class="m-sec">Sam Patel · Field Tech</div><div style="padding:0 12px 6px"><div class="m-bar"><i style="width:62%"></i></div><div class="m-sub" style="margin-top:3px">5 of 8 steps done</div></div><div class="m-row"><div><div class="m-n">Offer letter signed</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row"><div><div class="m-n">W-4 received</div><div class="m-sub"></div></div><span class="m-tag t-g">Done</span></div><div class="m-row hi"><div><div class="m-n">I-9 verification</div><div class="m-sub"></div></div><span class="m-tag t-o">Due</span></div><div class="m-row"><div><div class="m-n">Safety orientation</div><div class="m-sub"></div></div><span class="m-tag t-n">Pending</span></div></div><div class="sc-s"><div class="m-nav"><div class="m-title">📍 Clock-In Log</div><div class="m-dot"></div></div><div class="m-sec">Today · 9 on the clock</div><div class="m-row"><div><div class="m-n">Jordan Reyes</div><div class="m-sub">In 7:02 · Main St site</div></div><span class="m-big">4h 31m</span></div><div class="m-row"><div><div class="m-n">Chris Owens</div><div class="m-sub">In 7:15 · Warehouse</div></div><span class="m-big">4h 18m</span></div><div class="m-row"><div><div class="m-n">Taylor Kim</div><div class="m-sub">In 8:00 · Office</div></div><span class="m-big">3h 33m</span></div><div class="m-sec">This pay period</div><div class="m-tiles"><div class="m-tile"><div class="m-tn">412h</div><div class="m-tl">Regular</div></div><div class="m-tile"><div class="m-tn">18h</div><div class="m-tl">Overtime</div></div></div></div></div></div></div><div class="sc-dots"><i></i><i></i><i></i></div></div>
 <div class="sc-ways">
 <div class="sc-way"><span class="sc-way-ic" aria-hidden="true">&#128073;</span><div><b>Tap: menu-driven controls</b><span>Every app gives you simple menus and one-tap buttons to run your jobs, files and HR from your phone.</span></div></div>
 <div class="sc-way"><span class="sc-way-ic" aria-hidden="true">&#127897;&#65039;</span><div><b>Talk or type: AI chat control</b><span>Use Claude, Muse, Grok, or Grok Bot by voice or text on your phone to work with your data and business tools on your PC &mdash; remotely, from anywhere.</span></div></div>
@@ -941,6 +943,21 @@ integration, SMS and WhatsApp messaging for field crew &mdash; all from
 a Claude, Muse, Grok, or Grok Bot conversation.</p>
 </div>
 <div class="feature-card">
+<span class="feature-icon">&#127915;</span>
+<h3>Service Desk &amp; Tickets</h3>
+<p>A complete help desk built in. Customers file requests, book a time and
+track progress from your own support page; you work tickets from the
+Service Desk mobile app &mdash; queues, board view, approvals and reports.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">&#129302;</span>
+<h3>Four AI Agents</h3>
+<p>AI agents that work your Service Desk, bookings, jobs and HR around the
+clock &mdash; sorting, replying, scheduling, invoicing and following up.
+You program every step: off, suggest-and-wait, or fully automatic.
+<a href="#agents" style="color:var(--blue-bright);">See the agents &rarr;</a></p>
+</div>
+<div class="feature-card">
 <span class="feature-icon">&#128272;</span>
 <h3>Private by Design</h3>
 <p>Your documents never leave your PC. The vector database, embeddings,
@@ -963,6 +980,115 @@ Spanish indexing supported. Incremental indexing keeps the database
 in sync automatically.</p>
 </div>
 </div>
+</div>
+</section>
+
+<!-- ── AI AGENTS ─────────────────────────────────────────────────────── -->
+<section id="agents" style="padding:80px 5%;">
+<div style="max-width:1100px;margin:0 auto;">
+<p class="section-label">AI Agents</p>
+<h2 class="section-title">Four AI agents. Your four apps. Your rules.</h2>
+<p class="section-sub" style="margin-bottom:3rem;">
+Each agent works one part of your business around the clock &mdash; reading what comes in,
+deciding what to do next, and either doing it or lining it up for your OK. You decide exactly
+how much each one is allowed to do, step by step.
+</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-bottom:3rem;">
+
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:1.6rem;">
+<div style="font-size:2rem;margin-bottom:0.6rem;">&#127915;</div>
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.4rem;">Service Desk Agent</div>
+<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:0.6rem;">Every ticket answered.</h3>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.4rem;font-size:0.86rem;color:var(--grey-light);line-height:1.5;">
+<li>&rarr; Sorts, tags and routes new tickets</li>
+<li>&rarr; Drafts the first reply &mdash; any hour of the day</li>
+<li>&rarr; Follows up when a customer has been waiting</li>
+<li>&rarr; Suggests the fix from tickets you&rsquo;ve solved before</li>
+<li>&rarr; Learns from how you close tickets</li>
+</ul>
+</div>
+
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:1.6rem;">
+<div style="font-size:2rem;margin-bottom:0.6rem;">&#128197;</div>
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.4rem;">Booking Agent</div>
+<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:0.6rem;">Customers booked, not chased.</h3>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.4rem;font-size:0.86rem;color:var(--grey-light);line-height:1.5;">
+<li>&rarr; Checks every request from your support page</li>
+<li>&rarr; Offers open times that fit your crew&rsquo;s schedule</li>
+<li>&rarr; Confirms bookings within the daily limit you set</li>
+<li>&rarr; Watches the weather and offers a new time when it turns bad</li>
+<li>&rarr; Moves wait-listed customers up when a slot opens</li>
+</ul>
+</div>
+
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:1.6rem;">
+<div style="font-size:2rem;margin-bottom:0.6rem;">&#128295;</div>
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.4rem;">Jobs Agent &amp; Route Flow</div>
+<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:0.6rem;">From quote to paid.</h3>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.4rem;font-size:0.86rem;color:var(--grey-light);line-height:1.5;">
+<li>&rarr; Follows up open quotes and turns approved ones into jobs</li>
+<li>&rarr; Suggests dates and checks tomorrow&rsquo;s jobs and weather</li>
+<li>&rarr; Flags jobs running long or crews still clocked in</li>
+<li>&rarr; Drafts invoices, sends payment reminders, books the next visit</li>
+<li>&rarr; Plans the week, routes each day and sends each crew its route</li>
+</ul>
+</div>
+
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:1.6rem;">
+<div style="font-size:2rem;margin-bottom:0.6rem;">&#128101;</div>
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:#C084FC;margin-bottom:0.4rem;">HR Agent &middot; Business</div>
+<h3 style="font-size:1.1rem;font-weight:800;margin-bottom:0.6rem;">HR on autopilot.</h3>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.4rem;font-size:0.86rem;color:var(--grey-light);line-height:1.5;">
+<li>&rarr; Reminds new hires to finish onboarding</li>
+<li>&rarr; Recommends time-off decisions &mdash; balance, notice, blackout days</li>
+<li>&rarr; Answers employee questions in the HR Employee Portal</li>
+<li>&rarr; Flags missed clock-outs, overtime and expiring documents</li>
+<li>&rarr; Lines up offboarding tasks when someone leaves</li>
+</ul>
+</div>
+
+</div>
+
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:2rem;">
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:0.5rem;">Programmable Flows</div>
+<h3 style="font-size:1.4rem;font-weight:800;margin-bottom:0.8rem;line-height:1.25;">You program every step of every flow.</h3>
+<p style="font-size:0.92rem;color:var(--grey-light);line-height:1.7;margin-bottom:1.4rem;">
+Each agent follows a flow &mdash; a series of steps, shown as a live diagram in its settings.
+Set each step on its own, and change it any time from your PC or your phone.
+</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:1.6rem;">
+<div style="border:1px solid var(--navy-border);border-radius:10px;padding:1rem;">
+<div style="font-weight:800;margin-bottom:0.3rem;">&#9899; Off</div>
+<div style="font-size:0.86rem;color:var(--grey-light);line-height:1.5;">The step doesn&rsquo;t run. You handle it yourself.</div>
+</div>
+<div style="border:1px solid var(--navy-border);border-radius:10px;padding:1rem;">
+<div style="font-weight:800;margin-bottom:0.3rem;color:#F59E0B;">&#9679; Suggest</div>
+<div style="font-size:0.86rem;color:var(--grey-light);line-height:1.5;">The agent prepares the work and waits. Approve, edit or reject it with one tap.</div>
+</div>
+<div style="border:1px solid var(--navy-border);border-radius:10px;padding:1rem;">
+<div style="font-weight:800;margin-bottom:0.3rem;color:var(--green);">&#9679; Auto</div>
+<div style="font-size:0.86rem;color:var(--grey-light);line-height:1.5;">The agent does it on its own, inside the limits you set.</div>
+</div>
+<div style="border:1px solid var(--navy-border);border-radius:10px;padding:1rem;">
+<div style="font-weight:800;margin-bottom:0.3rem;color:#C084FC;">&#9711; Practice mode</div>
+<div style="font-size:0.86rem;color:var(--grey-light);line-height:1.5;">See what it <em>would</em> do without it touching anything. Rate each result &#128077; or &#128078; &mdash; your running totals tell you when each agent is ready.</div>
+</div>
+</div>
+<ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0.5rem 1.5rem;font-size:0.88rem;color:var(--grey-light);line-height:1.5;">
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Your limits:</strong> invoice amount and count per day, bookings confirmed per day, follow-up days, prep and send hours, working hours and a monthly AI budget</li>
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Built-in guardrails:</strong> never takes payments, never moves fixed-time or same-day jobs, and big changes always wait for a person</li>
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Nothing slips through:</strong> anything the rules refuse lands in your approval list with the reason</li>
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Private by design:</strong> sensitive HR messages go only to a person, and each manager sees only their own team and queues</li>
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">One set of settings:</strong> change a step on your PC or in the app &mdash; both stay in sync</li>
+<li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Your AI, your key:</strong> agents run on your own Claude or Grok API key, and stop when your monthly budget is reached</li>
+</ul>
+</div>
+
+<p style="font-size:0.85rem;color:var(--grey);margin-top:1.2rem;line-height:1.6;">
+&#9432; AI agents need your own Claude (Anthropic) or Grok (xAI) API key &mdash; usage is billed by that AI company, not by AI-Prowler.
+The Service Desk app, the Contractor Jobs app and your customer support page need a Personal or Business subscription. The HR agent works with the HR Admin and HR Employee Portal apps in Business (server) mode.
+</p>
 </div>
 </section>
 
@@ -1017,6 +1143,8 @@ from any device.
 <li>Access from Claude.ai, Muse, Grok, or Grok Bot on any device</li>
 <li>&#128241; <strong>Remote Control PWA</strong> &mdash; search, upload &amp; download files from your phone &mdash; <a href="remote-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#128295; <strong>Contractor Jobs App</strong> &mdash; schedule, clock-in/out, photos &amp; invoicing for field crew &mdash; <a href="jobs-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
+<li>&#127915; <strong>Service Desk App</strong> &mdash; tickets, bookings &amp; a customer support page &mdash; <a href="service-desk.html" style="color:var(--blue-bright);">see it →</a></li>
+<li>&#129302; <strong>AI agents</strong> for your Service Desk, bookings &amp; contractor jobs (your own API key) &mdash; <a href="#agents" style="color:var(--blue-bright);">see them →</a></li>
 <li>One-click activation code setup</li>
 <li>Auto-configured &mdash; no Cloudflare account needed</li>
 <li>Token recovery via email</li>
@@ -1048,8 +1176,10 @@ Get Mobile Access &rarr;
 <li>Admin tab &mdash; add, remove, and manage seats</li>
 <li>&#128241; <strong>Remote Control App</strong> &mdash; on each team member&rsquo;s Personal AI-Prowler (personal files only, not the shared server) &mdash; <a href="remote-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#128295; <strong>Contractor Jobs App</strong> &mdash; mobile contractor field service jobs for the whole crew, with role-based access &mdash; <a href="jobs-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
+<li>&#127915; <strong>Service Desk App</strong> &mdash; your team&rsquo;s help desk, with each manager seeing their own queues &mdash; <a href="service-desk.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#128188; <strong>HR Admin App</strong> &mdash; hiring, onboarding, time, payroll, compliance &amp; offboarding &mdash; <a href="hr-admin-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
 <li>&#129706; <strong>HR Employee Portal App</strong> &mdash; time clock, schedule, PTO, pay, documents &amp; training for every employee &mdash; <a href="hr-portal-pwa.html" style="color:var(--blue-bright);">see it →</a></li>
+<li>&#129302; <strong>HR AI agent</strong> &mdash; onboarding reminders, time-off recommendations, employee questions &amp; compliance flags</li>
 <li>SMS &amp; WhatsApp messaging for field crew</li>
 <li>Send learnings reports to the whole team</li>
 </ul>
@@ -1066,13 +1196,13 @@ Get AI-Prowler Server Mode &rarr;
 <section id="mobile-apps" style="padding:80px 5%;">
 <div style="max-width:1000px;margin:0 auto;">
 <p class="section-label">Mobile Apps</p>
-<h2 class="section-title">Four mobile apps. No app store required.</h2>
+<h2 class="section-title">Five mobile apps. No app store required.</h2>
 <p class="section-sub" style="margin-bottom:3rem;">
-The Personal Mobile subscription includes the Remote Control and Contractor Jobs apps.
-The Business Server subscription runs the Contractor Jobs app for your whole crew and adds two HR apps &mdash;
+The Personal Mobile subscription includes the Remote Control, Contractor Jobs and Service Desk apps.
+The Business Server subscription runs the Contractor Jobs and Service Desk apps for your whole team and adds two HR apps &mdash;
 HR Admin for owners and managers, and the HR Employee Portal for your team. For security, the Remote Control app
 (remote access to files) works in personal mode only, never on the shared server &mdash; each Business seat gets it on
-their own Personal AI-Prowler. All four are Progressive Web Apps (PWAs).
+their own Personal AI-Prowler. All five are Progressive Web Apps (PWAs).
 Open them in any phone or tablet browser and add them to your home screen like a native app &mdash;
 no App Store, no Google Play, no install.
 </p>
@@ -1162,6 +1292,27 @@ See HR Employee Portal →
 </a>
 </div>
 
+<!-- Service Desk PWA card -->
+<div style="background:var(--navy-card);border:1px solid var(--navy-border);border-radius:16px;padding:2rem;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#22D3EE';this.style.boxShadow='0 0 30px rgba(34,211,238,0.12)'" onmouseout="this.style.borderColor='var(--navy-border)';this.style.boxShadow='none'">
+<div style="font-size:2.2rem;margin-bottom:1rem;">🎫📱</div>
+<div style="font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:#22D3EE;margin-bottom:0.5rem;">Service Desk PWA</div>
+<h3 style="font-size:1.3rem;font-weight:800;margin-bottom:0.7rem;line-height:1.2;">Your help desk.<br>Wherever you are.</h3>
+<p style="font-size:0.9rem;color:var(--grey-light);line-height:1.7;margin-bottom:1.2rem;">
+Work every customer request from your phone. Tickets, bookings and your AI agents&rsquo; suggestions
+all in one place &mdash; and your customers get their own support page to file requests, book a time
+and follow progress.
+</p>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.4rem;">
+<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> My tickets, Open, Overdue and Board views, with queues and assignment</li>
+<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Approve bookings and AI suggestions with one tap from the To approve and Agent tabs</li>
+<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Customer support page: request service, pick a time, join the wait list, pay online</li>
+<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Turn a ticket into a job in the Contractor Jobs app &mdash; reports and exports included</li>
+</ul>
+<a href="service-desk.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#22D3EE;color:#0D1117;padding:0.65rem 1.4rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#67E8F9'" onmouseout="this.style.background='#22D3EE'">
+See Service Desk App →
+</a>
+</div>
+
 </div><!-- /grid -->
 
 <div style="margin-top:2rem;padding:1.2rem 1.4rem;background:var(--navy-card);border:1px solid var(--navy-border);border-radius:10px;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
@@ -1241,6 +1392,7 @@ Every app appears as an icon on your home screen and open full-screen like a nat
 <tbody>
 <tr><th scope="row"><a href="remote-pwa.html">Remote Control App</a></th><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;<span class="apps-note">on each seat&rsquo;s Personal install</span></td></tr>
 <tr><th scope="row"><a href="jobs-pwa.html">Contractor Jobs App</a></th><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+<tr><th scope="row"><a href="service-desk.html">Service Desk App</a></th><td class="no">&mdash;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
 <tr><th scope="row"><a href="hr-admin-pwa.html">HR Admin App</a></th><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
 <tr><th scope="row"><a href="hr-portal-pwa.html">HR Employee Portal App</a></th><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="yes">&#10003;</td></tr>
 </tbody>
@@ -1251,6 +1403,10 @@ Every app appears as an icon on your home screen and open full-screen like a nat
 <div class="faq-item">
 <div class="faq-q">Does Business include server hardware or installation support?</div>
 <div class="faq-a">The software subscription is separate from hardware. AI-Prowler Business covers the software licences &mdash; you can install it on any Windows PC or server you already own. If you want a turnkey solution, pre-configured AI-Prowler Server hardware is available starting at <strong>$600</strong>, with AI-Prowler Server pre-installed and support subscriptions available. Contact <a href="mailto:david.vavro1@gmail.com?subject=AI-Prowler Server HW/Install Support">david.vavro1@gmail.com</a> for details, hardware sizing advice, or paid installation support.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What do the AI agents cost, and are they safe to turn on?</div>
+<div class="faq-a">The agents run on your own Claude (Anthropic) or Grok (xAI) API key, so the AI company bills you for what they use &mdash; AI-Prowler doesn&rsquo;t mark it up. You set a monthly budget and the agents stop when it&rsquo;s reached. Every agent starts in Practice mode, where it only shows what it would do; you rate its work and switch each step to Suggest or Auto when you&rsquo;re ready. Without an API key the agents simply don&rsquo;t run, and the apps work as normal.</div>
 </div>
 <div class="faq-item">
 <div class="faq-q">Can I cancel my subscription?</div>
