@@ -24,6 +24,18 @@
       "show_after": "2026-11-01",
       "show_until": "2026-12-02",
       "show_once": true
+    },
+    {
+      "id": "Latest Version 9.7.1",
+      "type": "release",
+      "priority": "high",
+      "title": "v9.7.1",
+      "body": "Release v9.7.1  fix setup wizard feature hide and API Key Cost Analysis",
+      "link_text": "AI-Prowler v9.7.1",
+      "link_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.7.1",
+      "show_after": "2026-11-05",
+      "show_until": "2026-12-06",
+      "show_once": true
     }
   ],
   "latest_version": "9.7.1",
