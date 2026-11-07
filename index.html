@@ -789,7 +789,7 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
 <div class="sc" id="app-showcase" data-app="remote" aria-roledescription="carousel" aria-label="AI-Prowler mobile apps">
 <div class="sc-copy">
 <p class="sc-kicker"><b>5 mobile apps</b> for your business &middot; no app store needed</p>
-<div class="sc-app" data-k="remote"><div class="sc-name">Remote Control <span>App</span></div><p class="sc-line">Your whole knowledge base in your pocket. Search every document, grab any file from your PC, and upload job photos straight from your phone.</p><span class="sc-badge">&#10003; Included in the Mobile subscription <small>&middot; $10/mo &middot; personal install</small></span></div><div class="sc-app" data-k="jobs"><div class="sc-name">Contractor <span>Jobs</span> App</div><p class="sc-line">Your crew's day on one screen: today's schedule, one-tap clock in and out, before-and-after photos, and invoices sent before they leave the driveway.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="desk"><div class="sc-name">Service <span>Desk</span> App</div><p class="sc-line">Every customer request in one place: tickets, bookings and one-tap approvals &mdash; plus a support page where customers file requests, book a time and follow progress.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="portal"><div class="sc-name">HR <span>Employee Portal</span> App</div><p class="sc-line">Self-service for every employee: time clock, schedule, PTO requests, pay and benefits, the handbook, trainings, and an AI assistant for HR questions.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div><div class="sc-app" data-k="admin"><div class="sc-name">HR <span>Admin</span> App</div><p class="sc-line">Run HR from your phone, from hire to retire: recruiting, onboarding with I-9 and W-4 tracking, time and attendance, payroll records, compliance and offboarding.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div>
+<div class="sc-app" data-k="remote"><div class="sc-name">Remote Control <span>App</span></div><p class="sc-line">Your whole knowledge base in your pocket. Search every document, grab any file from your PC, and upload job photos straight from your phone.</p><span class="sc-badge">&#10003; Included in the Mobile subscription <small>&middot; $10/mo &middot; personal install</small></span></div><div class="sc-app" data-k="jobs"><div class="sc-name">Contractor <span>Jobs</span> App</div><p class="sc-line">Your crew's day on one screen: today's schedule, one-tap clock in and out, before-and-after photos, and invoices sent before they leave the driveway.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="desk"><div class="sc-name">Service <span>Desk</span> App</div><p class="sc-line">Every customer request in one place: tickets, bookings and one-tap approvals &mdash; plus your own customer website for booking, quotes, online shopping and payment, service tickets and an AI assistant.</p><span class="sc-badge">&#10003; Included in the Mobile &amp; Business Server subscriptions</span></div><div class="sc-app" data-k="portal"><div class="sc-name">HR <span>Employee Portal</span> App</div><p class="sc-line">Self-service for every employee: time clock, schedule, PTO requests, pay and benefits, the handbook, trainings, and an AI assistant for HR questions.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div><div class="sc-app" data-k="admin"><div class="sc-name">HR <span>Admin</span> App</div><p class="sc-line">Run HR from your phone, from hire to retire: recruiting, onboarding with I-9 and W-4 tracking, time and attendance, payroll records, compliance and offboarding.</p><span class="sc-badge">&#10003; Included in the Business Server subscription</span></div>
 <div class="sc-tabs" role="tablist"><button type="button" class="sc-tab" data-i="0"><span class="sc-bar"><i></i></span>Remote Control</button><button type="button" class="sc-tab" data-i="1"><span class="sc-bar"><i></i></span>Contractor Jobs</button><button type="button" class="sc-tab" data-i="2"><span class="sc-bar"><i></i></span>Service Desk</button><button type="button" class="sc-tab" data-i="3"><span class="sc-bar"><i></i></span>HR Employee Portal</button><button type="button" class="sc-tab" data-i="4"><span class="sc-bar"><i></i></span>HR Admin</button></div>
 <p class="sc-hint">Tap an app to see it &middot; <a href="#mobile-apps" style="color:var(--blue-bright);text-decoration:none;">compare plans &rarr;</a></p>
 </div>
@@ -805,8 +805,11 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   if (!root) return;
   var apps = root.querySelectorAll('.sc-app'), tabs = root.querySelectorAll('.sc-tab'),
       groups = root.querySelectorAll('.sc-group'), dots = root.querySelectorAll('.sc-dots i');
-  var SCREEN_MS = 2600, a = 0, s = 0, timer = null, paused = false;
+  // It always moves on by itself. With reduced motion (Windows "Animation effects" off) it moves more slowly; it only
+  // pauses under a real mouse pointer, because on a phone a tap counts as hovering and nothing ever ends it.
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var SCREEN_MS = reduce ? 4200 : 2600, a = 0, s = 0, timer = null, paused = false;
   function render(restartBar) {
     root.setAttribute('data-app', apps[a].getAttribute('data-k'));
     for (var i = 0; i < apps.length; i++) {
@@ -829,13 +832,15 @@ wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
     render(newApp);
     schedule();
   }
-  function schedule() { clearTimeout(timer); if (!reduce && !paused) timer = setTimeout(tick, SCREEN_MS); }
+  function schedule() { clearTimeout(timer); if (!paused) timer = setTimeout(tick, SCREEN_MS); }
   root.style.setProperty('--dur', (SCREEN_MS * 3 / 1000) + 's');
   for (var t = 0; t < tabs.length; t++) (function (i) {
     tabs[i].addEventListener('click', function () { a = i; s = 0; render(true); schedule(); });
   })(t);
-  root.addEventListener('mouseenter', function () { paused = true; root.classList.add('paused'); clearTimeout(timer); });
-  root.addEventListener('mouseleave', function () { paused = false; root.classList.remove('paused'); schedule(); });
+  if (canHover) {
+    root.addEventListener('mouseenter', function () { paused = true; root.classList.add('paused'); clearTimeout(timer); });
+    root.addEventListener('mouseleave', function () { paused = false; root.classList.remove('paused'); schedule(); });
+  }
   if (reduce) {
     // No auto-advance: tapping the phone steps through that app's screens instead.
     root.querySelector('.sc-phone').addEventListener('click', function () { s = (s + 1) % per(); render(false); });
@@ -945,8 +950,7 @@ a Claude, Muse, Grok, or Grok Bot conversation.</p>
 <div class="feature-card">
 <span class="feature-icon">&#127915;</span>
 <h3>Service Desk &amp; Tickets</h3>
-<p>A complete help desk built in. Customers file requests, book a time and
-track progress from your own support page; you work tickets from the
+<p>A complete help desk built in, with your own customer website: booking and scheduling, quotes, online shopping and payment, service tickets and an AI customer assistant; you work tickets from the
 Service Desk mobile app &mdash; queues, board view, approvals and reports.</p>
 </div>
 <div class="feature-card">
@@ -1074,6 +1078,135 @@ Set each step on its own, and change it any time from your PC or your phone.
 <div style="font-weight:800;margin-bottom:0.3rem;color:#C084FC;">&#9711; Practice mode</div>
 <div style="font-size:0.86rem;color:var(--grey-light);line-height:1.5;">See what it <em>would</em> do without it touching anything. Rate each result &#128077; or &#128078; &mdash; your running totals tell you when each agent is ready.</div>
 </div>
+</div>
+
+<!-- Try-it flow charts: the same steps and settings as in AI-Prowler -->
+<div class="fc" id="flow-demo">
+<style>
+.fc { margin: 0 0 1.8rem; }
+.fc-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+.fc-tab { background: transparent; border: 1px solid var(--navy-border); color: var(--grey-light); border-radius: 20px; padding: 0.35rem 0.9rem; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+.fc-tab.on { background: var(--blue); border-color: var(--blue); color: var(--white); font-weight: 700; }
+.fc-bar { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-size: 0.86rem; color: var(--grey-light); margin-bottom: 0.8rem; }
+.fc-bar label { display: inline-flex; gap: 0.4rem; align-items: center; cursor: pointer; }
+.fc-legend { display: flex; gap: 0.9rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--grey); }
+.fc-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 0.3rem; vertical-align: middle; }
+.fc-scroll { overflow-x: auto; padding: 6px 2px 10px; }
+.fc-grid { display: grid; gap: 0 14px; align-items: end; min-width: max-content; }
+.fc-steps { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.fc-step { border: 2px solid #22C55E; background: rgba(34,197,94,0.07); border-radius: 8px; padding: 6px 7px; width: 132px; text-align: center; position: relative; }
+.fc-step b { display: block; font-size: 0.82rem; color: var(--white); line-height: 1.2; }
+.fc-step .st { display: block; font-size: 0.7rem; font-weight: 700; margin: 2px 0 4px; color: #22C55E; }
+.fc-step select { width: 100%; background: #0d1117; color: var(--white); border: 1px solid #30363d; border-radius: 5px; font-size: 0.72rem; padding: 2px; font-family: inherit; }
+.fc-step.suggest { border-color: #F97316; background: rgba(249,115,22,0.07); }
+.fc-step.suggest .st { color: #F97316; }
+.fc-step.off { border-color: #4b5563; background: transparent; border-style: dashed; }
+.fc-step.off b, .fc-step.off .st { color: var(--grey); }
+.fc.practice .fc-step:not(.off) { outline: 2px dotted #A855F7; outline-offset: 3px; }
+.fc .pr { display: none; font-size: 0.66rem; color: #C084FC; }
+.fc.practice .fc-step:not(.off) .pr { display: block; }
+.fc-down { text-align: center; color: var(--grey); font-size: 0.9rem; line-height: 1.4; }
+.fc-state { border: 1px solid #30363d; background: #0d1117; border-radius: 8px; padding: 7px 6px; text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--grey-light); position: relative; }
+.fc-state:not(.last)::after { content: '\2192'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%); color: var(--grey); font-weight: 400; }
+.fc-sum { font-size: 0.86rem; color: var(--grey-light); line-height: 1.6; background: #0d1117; border: 1px solid var(--navy-border); border-radius: 8px; padding: 0.8rem 1rem; margin-top: 0.4rem; }
+.fc-note { font-size: 0.76rem; color: var(--grey); margin-top: 0.5rem; }
+</style>
+<h4 style="font-size:1.05rem;font-weight:800;margin:0.4rem 0 0.7rem;">Try it &mdash; set the steps yourself</h4>
+<div class="fc-tabs" role="tablist"></div>
+<div class="fc-bar">
+<label><input type="checkbox" class="fc-pr" checked> Practice mode &mdash; only show what it would do</label>
+<span class="fc-legend"><span><i style="background:#22C55E"></i>automatic</span><span><i style="background:#F97316"></i>waits for your OK</span><span><i style="border:1px dotted #A855F7"></i>practice ring</span><span><i style="background:#4b5563"></i>off</span></span>
+</div>
+<div class="fc-scroll"><div class="fc-grid"></div></div>
+<div class="fc-sum" aria-live="polite"></div>
+<p class="fc-note">This is the same flow you&rsquo;ll see in each agent&rsquo;s settings in AI-Prowler &mdash; a demo here, so nothing is saved. Hover a step to see what it does.</p>
+<script>
+(function () {
+  var A = {
+    desk: { name: 'Service Desk', cols: [
+      ['Open', [['Intake', 'Sets the type and priority, routes the ticket and spots duplicates.', 'auto']]],
+      ['Assigned (you)', [['First reply', 'Drafts the first reply to the customer, any hour of the day.', 'auto']]],
+      ['In Progress', [['Resolution help', 'Leaves an internal note with the likely fix from tickets you solved before.', 'auto']]],
+      ['Fixed', [['Follow-through', 'Nudges the team or the customer when a ticket goes quiet.', 'suggest']]],
+      ['Closed', [['Learn', 'Proposes a lesson to remember when a ticket closes.', 'auto']]] ] },
+    booking: { name: 'Bookings', cols: [
+      ['Requested', [['Check', 'Checks the address, service area, duplicates and history.', 'auto']]],
+      ['To approve', [['Decide', 'Recommends approve, another time or decline, and the crew.', 'suggest']]],
+      ['Suggested', [['Offer times', 'Offers open times for requests that came in with no date.', 'auto']]],
+      ['Scheduled', [['Answer', 'Answers customers about their visit.', 'auto'], ['Keep on track', 'Chases answers, fills openings from the wait list, watches the weather.', 'auto']]],
+      ['Done', [['Learn', 'Learns real job times and customer preferences.', 'auto']]] ] },
+    jobs: { name: 'Contractor Jobs', cols: [
+      ['Quote', [['Quotes', 'Follows up open quotes and turns approved ones into jobs.', 'auto']]],
+      ['Unscheduled', [['Schedule', 'Suggests dates close to that day\'s other jobs. Only ever suggests.', 'auto']]],
+      ['Scheduled', [['Prep the day', 'Checks tomorrow: overfull days, missing details, rain or wind.', 'auto']]],
+      ['In Progress', [['On site', 'Flags jobs running long and crews still clocked in.', 'auto']]],
+      ['Complete', [['Close out', 'Drafts the invoice when a job is done.', 'suggest'], ['Learn', 'Learns real job times and customer notes.', 'auto']]],
+      ['Invoiced', [['Get paid', 'Sends payment reminders for unpaid invoices.', 'auto']]],
+      ['Paid', [['Repeat', 'Books the next recurring visit and wins back quiet customers.', 'auto']]] ] },
+    route: { name: 'Route Flow', cols: [
+      ['Unscheduled', [['Sort the week', 'Decides which day each job goes on.', 'auto']]],
+      ['Week plan', [['Schedule week', 'Puts the sorted jobs on the calendar.', 'auto']]],
+      ['Scheduled', [['Route', 'Sets the stop order for each day.', 'auto']]],
+      ['Routed', [['Send routes', 'Approves and sends each crew its own route.', 'suggest']]],
+      ['Your route', []],
+      ['On the road', [['Re-plan day', 'Handles cancellations, running late and new urgent jobs.', 'auto']]],
+      ['Done', []] ] },
+    hr: { name: 'HR (Business)', cols: [
+      ['Candidate', [['Recruit', 'Acknowledges applicants and keeps candidates moving. Never ranks or rejects anyone.', 'auto']]],
+      ['Onboarding', [['Onboard', 'Watches each new hire\'s checklist and drafts the nudge.', 'auto']]],
+      ['Active', [['Docs & training', 'Flags expiring licences and training past due.', 'auto'], ['Questions', 'Drafts answers to employee questions; anything sensitive goes to a person.', 'suggest'], ['Time clock', 'Flags missed clock-outs and overtime. Never edits a time entry.', 'auto']]],
+      ['On leave', [['Time off', 'Checks balance, notice, blackout days and coverage, then recommends.', 'suggest']]],
+      ['Offboarding', [['Offboard', 'Final-pay deadline, equipment, access and required notices.', 'auto']]] ] }
+  };
+  var root = document.getElementById('flow-demo');
+  var tabs = root.querySelector('.fc-tabs'), grid = root.querySelector('.fc-grid'), sum = root.querySelector('.fc-sum'), pr = root.querySelector('.fc-pr');
+  var cur = 'desk', LABEL = { auto: 'automatic', suggest: 'waits for your OK', off: 'off' };
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function list(a) { return a.length > 1 ? a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1] : a[0]; }
+  function summary() {
+    var auto = [], sug = [], off = [];
+    A[cur].cols.forEach(function (c) { c[1].forEach(function (st) { ({ auto: auto, suggest: sug, off: off })[st[2]].push(st[0]); }); });
+    var t = '';
+    if (!auto.length && !sug.length) t = 'Every step is off &mdash; this agent does nothing. ';
+    else {
+      if (pr.checked) t += '<b>Practice mode is ON</b> &mdash; nothing is changed and nothing is sent to customers; the agent only shows what it would do. When you turn practice off: ';
+      if (auto.length) t += 'Does on its own: ' + esc(list(auto)) + '. ';
+      if (sug.length) t += 'Waits for your OK: ' + esc(list(sug)) + '. ';
+    }
+    if (off.length && (auto.length || sug.length)) t += 'Off: ' + esc(list(off)) + '.';
+    sum.innerHTML = t;
+  }
+  function draw() {
+    var cols = A[cur].cols;
+    grid.style.gridTemplateColumns = 'repeat(' + cols.length + ', 132px)';
+    var h = '';
+    cols.forEach(function (c, ci) {
+      h += '<div class="fc-steps" style="grid-row:1;grid-column:' + (ci + 1) + '">';
+      c[1].forEach(function (st, si) {
+        h += '<div class="fc-step ' + st[2] + '" title="' + esc(st[1]) + '"><b>' + esc(st[0]) + '</b><span class="st">' + LABEL[st[2]] + '</span><span class="pr">practice</span>' +
+             '<select data-c="' + ci + '" data-s="' + si + '" aria-label="' + esc(st[0]) + '"><option value="auto"' + (st[2] === 'auto' ? ' selected' : '') + '>Auto</option><option value="suggest"' + (st[2] === 'suggest' ? ' selected' : '') + '>Suggest</option><option value="off"' + (st[2] === 'off' ? ' selected' : '') + '>Off</option></select></div>';
+      });
+      h += '</div><div class="fc-down" style="grid-row:2;grid-column:' + (ci + 1) + '">' + (c[1].length ? '&#8595;' : '&nbsp;') + '</div>';
+      h += '<div class="fc-state' + (ci === cols.length - 1 ? ' last' : '') + '" style="grid-row:3;grid-column:' + (ci + 1) + '">' + esc(c[0]) + '</div>';
+    });
+    grid.innerHTML = h;
+    root.classList.toggle('practice', pr.checked);
+    summary();
+  }
+  Object.keys(A).forEach(function (k) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'fc-tab' + (k === cur ? ' on' : ''); b.textContent = A[k].name; b.setAttribute('data-k', k);
+    b.addEventListener('click', function () { cur = k; [].forEach.call(tabs.children, function (x) { x.classList.toggle('on', x === b); }); draw(); });
+    tabs.appendChild(b);
+  });
+  grid.addEventListener('change', function (e) {
+    var t = e.target; if (!t.matches('select')) return;
+    A[cur].cols[+t.getAttribute('data-c')][1][+t.getAttribute('data-s')][2] = t.value; draw();
+  });
+  pr.addEventListener('change', draw);
+  draw();
+})();
+</script>
 </div>
 <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0.5rem 1.5rem;font-size:0.88rem;color:var(--grey-light);line-height:1.5;">
 <li><span style="color:var(--blue-bright);font-weight:700;">&rarr;</span> <strong style="color:var(--white);">Your limits:</strong> invoice amount and count per day, bookings confirmed per day, follow-up days, prep and send hours, working hours and a monthly AI budget</li>
@@ -1305,7 +1438,7 @@ and follow progress.
 <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.4rem;">
 <li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> My tickets, Open, Overdue and Board views, with queues and assignment</li>
 <li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Approve bookings and AI suggestions with one tap from the To approve and Agent tabs</li>
-<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Customer support page: request service, pick a time, join the wait list, pay online</li>
+<li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Customer website: book a visit, get a quote, shop and pay online, file a ticket, and ask your AI assistant</li>
 <li style="font-size:0.88rem;color:var(--grey-light);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:#22D3EE;font-weight:700;flex-shrink:0;">→</span> Turn a ticket into a job in the Contractor Jobs app &mdash; reports and exports included</li>
 </ul>
 <a href="service-desk.html" style="display:inline-flex;align-items:center;gap:0.5rem;background:#22D3EE;color:#0D1117;padding:0.65rem 1.4rem;border-radius:8px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#67E8F9'" onmouseout="this.style.background='#22D3EE'">
