@@ -26,7 +26,7 @@
       "show_once": true
     }
   ],
-  "latest_version": "9.7.0",
-  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.7.0",
-  "update_notes": "Release v9.7.0 added a service desk and 4 agents to automate the Jobs, HR, Service Desk, Booking and scheduling."
+  "latest_version": "9.7.1",
+  "update_url": "https://github.com/dvavro/AI-Prowler/releases/tag/v9.7.1",
+  "update_notes": "Release v9.7.1 fix setup wizard feature hide."
 }
